@@ -1,0 +1,13 @@
+PODS:
+  - Alamofire (1.2.1)
+  - MaterialKit (0.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.2)
+  - MaterialKit
+
+SPEC CHECKSUMS:
+  Alamofire: 1acfdf179aff68b41a48dff70c1ac7fa263e2bcb
+  MaterialKit: dba786a24f5e5cdeb638000b899b05042dafa41c
+
+COCOAPODS: 0.37.1
