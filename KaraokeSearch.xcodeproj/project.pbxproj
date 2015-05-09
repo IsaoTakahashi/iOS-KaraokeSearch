@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		4D5236C31AFD9A9700D27C3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */; };
 		4D5236C61AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236C41AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld */; };
-		4D5236C81AFD9A9700D27C3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236C71AFD9A9700D27C3C /* ViewController.swift */; };
+		4D5236C81AFD9A9700D27C3C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */; };
 		4D5236CB1AFD9A9700D27C3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D5236C91AFD9A9700D27C3C /* Main.storyboard */; };
 		4D5236CD1AFD9A9700D27C3C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5236CC1AFD9A9700D27C3C /* Images.xcassets */; };
 		4D5236D01AFD9A9700D27C3C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5236CE1AFD9A9700D27C3C /* LaunchScreen.xib */; };
 		4D5236DC1AFD9A9800D27C3C /* KaraokeSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236DB1AFD9A9800D27C3C /* KaraokeSearchTests.swift */; };
+		4D5236E61AFDBDE000D27C3C /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236E51AFDBDE000D27C3C /* SearchNavigationController.swift */; };
+		4D5236E81AFDC00400D27C3C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236E71AFDC00400D27C3C /* UIColorExtension.swift */; };
+		4D5236EC1AFDCDE200D27C3C /* SearchSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */; };
+		4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236ED1AFDF74200D27C3C /* Song.swift */; };
+		4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */; };
 		9B7D57F11226F811FBA24797 /* Pods_KaraokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412DA1AA204BD4DE10D6C53 /* Pods_KaraokeSearch.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -34,13 +39,18 @@
 		4D5236C11AFD9A9700D27C3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D5236C51AFD9A9700D27C3C /* KaraokeSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KaraokeSearch.xcdatamodel; sourceTree = "<group>"; };
-		4D5236C71AFD9A9700D27C3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4D5236CA1AFD9A9700D27C3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D5236CC1AFD9A9700D27C3C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D5236CF1AFD9A9700D27C3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4D5236D51AFD9A9800D27C3C /* KaraokeSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaraokeSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5236DA1AFD9A9800D27C3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D5236DB1AFD9A9800D27C3C /* KaraokeSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaraokeSearchTests.swift; sourceTree = "<group>"; };
+		4D5236E51AFDBDE000D27C3C /* SearchNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
+		4D5236E71AFDC00400D27C3C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSongViewController.swift; sourceTree = "<group>"; };
+		4D5236ED1AFDF74200D27C3C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,12 +105,17 @@
 			isa = PBXGroup;
 			children = (
 				4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */,
-				4D5236C71AFD9A9700D27C3C /* ViewController.swift */,
+				4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */,
 				4D5236C91AFD9A9700D27C3C /* Main.storyboard */,
 				4D5236CC1AFD9A9700D27C3C /* Images.xcassets */,
 				4D5236CE1AFD9A9700D27C3C /* LaunchScreen.xib */,
 				4D5236C41AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld */,
 				4D5236C01AFD9A9700D27C3C /* Supporting Files */,
+				4D5236E51AFDBDE000D27C3C /* SearchNavigationController.swift */,
+				4D5236E71AFDC00400D27C3C /* UIColorExtension.swift */,
+				4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */,
+				4D5236ED1AFDF74200D27C3C /* Song.swift */,
+				4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */,
 			);
 			path = KaraokeSearch;
 			sourceTree = "<group>";
@@ -290,7 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5236C81AFD9A9700D27C3C /* ViewController.swift in Sources */,
+				4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */,
+				4D5236E61AFDBDE000D27C3C /* SearchNavigationController.swift in Sources */,
+				4D5236EC1AFDCDE200D27C3C /* SearchSongViewController.swift in Sources */,
+				4D5236C81AFD9A9700D27C3C /* BaseViewController.swift in Sources */,
+				4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */,
+				4D5236E81AFDC00400D27C3C /* UIColorExtension.swift in Sources */,
 				4D5236C61AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld in Sources */,
 				4D5236C31AFD9A9700D27C3C /* AppDelegate.swift in Sources */,
 			);

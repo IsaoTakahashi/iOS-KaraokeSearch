@@ -7,311 +7,337 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C21D627E8F2BE914595A64 /* Pods-KaraokeSearch-MaterialKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 327064548451C7E14086BC98 /* Pods-KaraokeSearch-MaterialKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2938340243A8AE0BB7CA064B /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65035AD058754C296E46D68E /* MKTextField.swift */; };
-		45F052B86A31DCB0AFD6A1D2 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59ED3C6399791AC1B766579 /* MKLabel.swift */; };
-		5CDD691764B17DCDD41BCCDD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC20E25627AD9B9711C5317 /* Foundation.framework */; };
-		63C71E96F66C1F0F8F79D642 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65546AA5FF371A351D79F7A /* MKLayer.swift */; };
-		89FAFFF922B89334B36B5EFE /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C2C55BDCE4490535EAFFB6 /* MKColor.swift */; };
-		9164EFB9EDEE378727A693CD /* Pods-KaraokeSearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE86822D07883B04949918E0 /* Pods-KaraokeSearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA925D26322D80034FBC0358 /* Pods-KaraokeSearch-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BD72B9A67E747B2A9F3028 /* Pods-KaraokeSearch-Alamofire-dummy.m */; };
-		B542187FE3ACE05531B52400 /* Pods-KaraokeSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC485A24306D1B34EC8A3863 /* Pods-KaraokeSearch-dummy.m */; };
-		B9E5100F346100F8208C5252 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F2E767058CC1A6B767CE6B /* Alamofire.swift */; };
-		BD397317DB03CC052261B333 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A6C36AFC8E91B9D93951D /* MKButton.swift */; };
-		CB2EAF7FA30B08EE09340792 /* Pods-KaraokeSearch-MaterialKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B2249CB1686ABC74CACF49 /* Pods-KaraokeSearch-MaterialKit-dummy.m */; };
-		DBC79A548CBC17DB0085C84D /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D624DF7D61B8E40A590F75 /* MKImageView.swift */; };
-		EC249F811B56FDDF16C9A5CD /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04020EAE0691C7AF614B1A0 /* MKTableViewCell.swift */; };
-		EC95DE72E9BA9FFA0A00F3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC20E25627AD9B9711C5317 /* Foundation.framework */; };
-		F092A69B3E203B53D9F11AD4 /* Pods-KaraokeSearch-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEE92D442F7F7EF4CD2B99C9 /* Pods-KaraokeSearch-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F76CCDB9E91600A094319456 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC20E25627AD9B9711C5317 /* Foundation.framework */; };
+		0462B5674C6EBF6D201A1EAD /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC41188D4F4AE113B8C9011 /* MKLabel.swift */; };
+		20290CBFF253197D1D12D0C3 /* Pods-KaraokeSearch-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43778AD307495B4604D8DBE1 /* Pods-KaraokeSearch-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24879F9037965023A6B2363B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */; };
+		3333F2857F75670229F48EF0 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8AB30780149CF783C84571 /* MKButton.swift */; };
+		3DC0BAD39EF69CF022308339 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6607BD610A39CCD33E98EF5E /* MKTableViewCell.swift */; };
+		6465CFE3CC3D5B8500AC34CE /* Pods-KaraokeSearch-MaterialKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2213A952F4E32A9B3255CDEB /* Pods-KaraokeSearch-MaterialKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		688CC8E9642A77873EE39A41 /* Pods-KaraokeSearch-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B079B33223C76A67D4CBD45A /* Pods-KaraokeSearch-Alamofire-dummy.m */; };
+		76199AF2A4E55942A01B30A6 /* Pods-KaraokeSearch-MaterialKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 819CFFD79E7424F75999F888 /* Pods-KaraokeSearch-MaterialKit-dummy.m */; };
+		78DA929942701AE3ADF0A0B9 /* Pods-KaraokeSearch-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B7E3DD1BD832E6064B5DCB5 /* Pods-KaraokeSearch-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C3294674DA9AC94233D4790 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC502809533892B8C6DBCB25 /* MKImageView.swift */; };
+		89787FE44847F9A4965B625C /* Pods-KaraokeSearch-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA61D3D5A2659917C928FBC1 /* Pods-KaraokeSearch-SwiftyJSON-dummy.m */; };
+		97796FAE4F04D23AB0320DA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */; };
+		C32D8F4D8F22A21E1716F0A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */; };
+		C7AF55910E7C8781F481B526 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D89598EE3827F1E900D91 /* MKLayer.swift */; };
+		C7FDA37B6711C44F89A5A944 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DF3062A6D1A0248690C7C /* Alamofire.swift */; };
+		C8B94661D79F46A4A98D48AF /* Pods-KaraokeSearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDC064299C71BADCEFA8798 /* Pods-KaraokeSearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCE8D0D6FF8C008BDC4945F2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEEF65D9B112EFFB731E56 /* MKTextField.swift */; };
+		D040B8351FD9CFC2D1326801 /* Pods-KaraokeSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8F28783228E42D5E805BBA /* Pods-KaraokeSearch-dummy.m */; };
+		DBA580ECB42829B2D3B288BA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319ACEFCEF212078E0C0A9F /* SwiftyJSON.swift */; };
+		E786845C02294DC4ECCEE11A /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411BFCA8820E92D72B17F5F /* MKColor.swift */; };
+		FFBE05F140B611BAC2910E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		486387918D68B017F1CF7DDA /* PBXContainerItemProxy */ = {
+		109C7220C04CFAC23849E57D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E20CA62EA3BDFCD179F29DF2 /* Project object */;
+			containerPortal = 52DB06ED30649362E990F75C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A104D160A7AE7018DECD5465;
+			remoteGlobalIDString = 3F6F82E565E67EE2AB28048F;
+			remoteInfo = "Pods-KaraokeSearch-Alamofire";
+		};
+		17F105C37EC70811E156C960 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52DB06ED30649362E990F75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C7315C782B201EA81A3F27E;
 			remoteInfo = "Pods-KaraokeSearch-MaterialKit";
 		};
-		BE0633D5E311BD5023B6957B /* PBXContainerItemProxy */ = {
+		E04078D460ABDA8273CACDAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E20CA62EA3BDFCD179F29DF2 /* Project object */;
+			containerPortal = 52DB06ED30649362E990F75C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 67C7AFFD0ABDD47BB619B39A;
-			remoteInfo = "Pods-KaraokeSearch-Alamofire";
+			remoteGlobalIDString = 5A9172311E19185E44A05CD3;
+			remoteInfo = "Pods-KaraokeSearch-SwiftyJSON";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		028AB4A03448FE3941820A3C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13B2249CB1686ABC74CACF49 /* Pods-KaraokeSearch-MaterialKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-MaterialKit-dummy.m"; sourceTree = "<group>"; };
-		2B93682116DC1F5DC10C550E /* Pods-KaraokeSearch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KaraokeSearch-resources.sh"; sourceTree = "<group>"; };
-		2FE981FF649524018F70E43E /* Pods-KaraokeSearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch.modulemap"; sourceTree = "<group>"; };
-		327064548451C7E14086BC98 /* Pods-KaraokeSearch-MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-MaterialKit-umbrella.h"; sourceTree = "<group>"; };
-		35232EA0FB2D0C66B96EB436 /* Pods-KaraokeSearch-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-Alamofire.xcconfig"; sourceTree = "<group>"; };
-		50AD811E57A6CDD496F5349F /* Pods-KaraokeSearch-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch-Alamofire.modulemap"; sourceTree = "<group>"; };
-		65035AD058754C296E46D68E /* MKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = Source/MKTextField.swift; sourceTree = "<group>"; };
-		68E25372C8D1BEE473E46382 /* MaterialKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaterialKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AC20E25627AD9B9711C5317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		79FEC08889DC7F06DE93B9AB /* Pods-KaraokeSearch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KaraokeSearch-frameworks.sh"; sourceTree = "<group>"; };
-		828A5DC9A99C016B7A21435E /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-MaterialKit-Private.xcconfig"; sourceTree = "<group>"; };
-		8354C2AFF21A7EB62666223C /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
-		8CF5A1DAF42F52C670F6F784 /* Pods-KaraokeSearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KaraokeSearch-acknowledgements.plist"; sourceTree = "<group>"; };
-		931BD7835C4D0281AE3EE127 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
-		941A6C36AFC8E91B9D93951D /* MKButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = Source/MKButton.swift; sourceTree = "<group>"; };
-		962654560BD790D19F1B5298 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		967B84DD041574926002E689 /* Pods-KaraokeSearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KaraokeSearch-acknowledgements.markdown"; sourceTree = "<group>"; };
-		A390A7891D2512758AC7E402 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC485A24306D1B34EC8A3863 /* Pods-KaraokeSearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-dummy.m"; sourceTree = "<group>"; };
-		AE86822D07883B04949918E0 /* Pods-KaraokeSearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-umbrella.h"; sourceTree = "<group>"; };
-		AEE92D442F7F7EF4CD2B99C9 /* Pods-KaraokeSearch-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		B3C12CE3ABC3600CA96EC167 /* Pods-KaraokeSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch.debug.xcconfig"; sourceTree = "<group>"; };
-		B7BD72B9A67E747B2A9F3028 /* Pods-KaraokeSearch-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-Alamofire-dummy.m"; sourceTree = "<group>"; };
-		BA001258EA451466BF10E607 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB449EAB248CE173152416EF /* Pods-KaraokeSearch-MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch-MaterialKit.modulemap"; sourceTree = "<group>"; };
-		C59ED3C6399791AC1B766579 /* MKLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = Source/MKLabel.swift; sourceTree = "<group>"; };
-		CD76F26387874125754DB77D /* Pods-KaraokeSearch-MaterialKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-MaterialKit.xcconfig"; sourceTree = "<group>"; };
-		D22198B7E5E8DD62D47B2B57 /* Pods-KaraokeSearch-MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-MaterialKit-prefix.pch"; sourceTree = "<group>"; };
-		D4D624DF7D61B8E40A590F75 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
-		D638B4D4E248C3E5C585ADB5 /* Pods-KaraokeSearch-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-environment.h"; sourceTree = "<group>"; };
-		D65546AA5FF371A351D79F7A /* MKLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = Source/MKLayer.swift; sourceTree = "<group>"; };
-		D9F2E767058CC1A6B767CE6B /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		E04020EAE0691C7AF614B1A0 /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
-		E571BE3C4820E3D5F48B89A9 /* Pods-KaraokeSearch-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		F1C2C55BDCE4490535EAFFB6 /* MKColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = Source/MKColor.swift; sourceTree = "<group>"; };
-		F20B80040E5CF588025220C7 /* Pods_KaraokeSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaraokeSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F795895D7B600D1D7A340DDF /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		01AE9A9A590A6DE0ED379511 /* Pods-KaraokeSearch-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		0CE5A9BC8F5165A29329E5C7 /* Pods-KaraokeSearch-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		0DC41188D4F4AE113B8C9011 /* MKLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLabel.swift; path = Source/MKLabel.swift; sourceTree = "<group>"; };
+		2213A952F4E32A9B3255CDEB /* Pods-KaraokeSearch-MaterialKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-MaterialKit-umbrella.h"; sourceTree = "<group>"; };
+		34AF7D12848ECF7985777B54 /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		379F6A7A3F5DEBF5A334A169 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
+		43778AD307495B4604D8DBE1 /* Pods-KaraokeSearch-SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		499E257A90C2C000DEB84E3F /* Pods-KaraokeSearch-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KaraokeSearch-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4BFF9D787ABA24ED86B95820 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5245060B6013EDC179044C41 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60DCB34C85AAA6AE89B84740 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62FF5195E39589B63AE2DF15 /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-MaterialKit-Private.xcconfig"; sourceTree = "<group>"; };
+		6607BD610A39CCD33E98EF5E /* MKTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTableViewCell.swift; path = Source/MKTableViewCell.swift; sourceTree = "<group>"; };
+		6A76C183B2393FF24EC8D477 /* Pods_KaraokeSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaraokeSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B7E3DD1BD832E6064B5DCB5 /* Pods-KaraokeSearch-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		70D90D7BF868947F42FA867A /* Pods-KaraokeSearch-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		7151B81E7BBB9548B3DCFDB9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72777304A20580B76CE2FF0E /* Pods-KaraokeSearch-MaterialKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-MaterialKit.xcconfig"; sourceTree = "<group>"; };
+		739B84A1FB43972E4D18979A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B7CBCF77F26E836C98FA2A3 /* Pods-KaraokeSearch-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KaraokeSearch-acknowledgements.plist"; sourceTree = "<group>"; };
+		7D60F57DD408788EF59BD77F /* Pods-KaraokeSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		819CFFD79E7424F75999F888 /* Pods-KaraokeSearch-MaterialKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-MaterialKit-dummy.m"; sourceTree = "<group>"; };
+		81BE3A362EF0893255F1BBE5 /* Pods-KaraokeSearch-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-environment.h"; sourceTree = "<group>"; };
+		870CBEF7D516B6151ADA05B7 /* Pods-KaraokeSearch-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
+		8C60D91975ABF8B55B9EA70C /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8D36C15B0DBF43FF8742B76A /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D8F28783228E42D5E805BBA /* Pods-KaraokeSearch-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-dummy.m"; sourceTree = "<group>"; };
+		9FA3ADE530F5215B91692FCB /* Pods-KaraokeSearch-SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KaraokeSearch-SwiftyJSON.xcconfig"; sourceTree = "<group>"; };
+		A3CEEF65D9B112EFFB731E56 /* MKTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKTextField.swift; path = Source/MKTextField.swift; sourceTree = "<group>"; };
+		B079B33223C76A67D4CBD45A /* Pods-KaraokeSearch-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		BB6214F6B4410DE12F73A76B /* Pods-KaraokeSearch-MaterialKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch-MaterialKit.modulemap"; sourceTree = "<group>"; };
+		BC502809533892B8C6DBCB25 /* MKImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKImageView.swift; path = Source/MKImageView.swift; sourceTree = "<group>"; };
+		BF433AAD50C698D6806F2C2E /* Pods-KaraokeSearch-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
+		CA8AB30780149CF783C84571 /* MKButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKButton.swift; path = Source/MKButton.swift; sourceTree = "<group>"; };
+		CBC65B74FA3130F2C82D7C54 /* Pods-KaraokeSearch-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch-Alamofire.modulemap"; sourceTree = "<group>"; };
+		CFDC064299C71BADCEFA8798 /* Pods-KaraokeSearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-umbrella.h"; sourceTree = "<group>"; };
+		D319ACEFCEF212078E0C0A9F /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		D90DF3062A6D1A0248690C7C /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		E411BFCA8820E92D72B17F5F /* MKColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKColor.swift; path = Source/MKColor.swift; sourceTree = "<group>"; };
+		E95D7ED126C82B0E2FFA0607 /* MaterialKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaterialKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EE3302BB58C52102E0465B97 /* Pods-KaraokeSearch-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KaraokeSearch-frameworks.sh"; sourceTree = "<group>"; };
+		EE5D89598EE3827F1E900D91 /* MKLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MKLayer.swift; path = Source/MKLayer.swift; sourceTree = "<group>"; };
+		F052060BEE1759AF3F809154 /* Pods-KaraokeSearch-MaterialKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KaraokeSearch-MaterialKit-prefix.pch"; sourceTree = "<group>"; };
+		F404E58B40322F7075282747 /* Pods-KaraokeSearch-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KaraokeSearch-resources.sh"; sourceTree = "<group>"; };
+		FA61D3D5A2659917C928FBC1 /* Pods-KaraokeSearch-SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KaraokeSearch-SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		FD379F9AC7716B85E1E8D994 /* Pods-KaraokeSearch.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KaraokeSearch.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AE276E1E950AB954E5E4C873 /* Frameworks */ = {
+		4E3C3B4441E830C8750B8392 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDD691764B17DCDD41BCCDD /* Foundation.framework in Frameworks */,
+				24879F9037965023A6B2363B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC350AF4349F3E0583DC78CF /* Frameworks */ = {
+		9FEC9258EB66D6B4565F2AE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC95DE72E9BA9FFA0A00F3AD /* Foundation.framework in Frameworks */,
+				97796FAE4F04D23AB0320DA5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BCC164D9AB4F2AE82872941C /* Frameworks */ = {
+		AA9802884898852996257CE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F76CCDB9E91600A094319456 /* Foundation.framework in Frameworks */,
+				FFBE05F140B611BAC2910E96 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDDC700D5F50D83AA9800594 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C32D8F4D8F22A21E1716F0A3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28E59402E5ECA06CA6FFF15C /* Pods */ = {
+		08DA5D139CD2A13E7B306485 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				853D4A9316894ADA6B39C88D /* Alamofire */,
-				F6DF71984FADFF8A48B6E18A /* MaterialKit */,
+				545EA0310146FB8336180BEF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		238C53B409E1D228A0F681F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93D73AA1F6D4902D3EEB8FC2 /* Alamofire */,
+				97C6ED4F76B80FB0D7C948F2 /* MaterialKit */,
+				9E8D070DCD0413FF23F1E97B /* SwiftyJSON */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3CF01B3C146C2C008442B311 /* Support Files */ = {
+		2982963C0E31ED320D783855 /* Pods-KaraokeSearch */ = {
 			isa = PBXGroup;
 			children = (
-				028AB4A03448FE3941820A3C /* Info.plist */,
-				BB449EAB248CE173152416EF /* Pods-KaraokeSearch-MaterialKit.modulemap */,
-				CD76F26387874125754DB77D /* Pods-KaraokeSearch-MaterialKit.xcconfig */,
-				828A5DC9A99C016B7A21435E /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */,
-				13B2249CB1686ABC74CACF49 /* Pods-KaraokeSearch-MaterialKit-dummy.m */,
-				D22198B7E5E8DD62D47B2B57 /* Pods-KaraokeSearch-MaterialKit-prefix.pch */,
-				327064548451C7E14086BC98 /* Pods-KaraokeSearch-MaterialKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-KaraokeSearch-MaterialKit";
-			sourceTree = "<group>";
-		};
-		4FA9B6146BC96DF62E37DE92 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6AC20E25627AD9B9711C5317 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		8051C428ABD8F1005B9ABFA9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A390A7891D2512758AC7E402 /* Alamofire.framework */,
-				68E25372C8D1BEE473E46382 /* MaterialKit.framework */,
-				F20B80040E5CF588025220C7 /* Pods_KaraokeSearch.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		853D4A9316894ADA6B39C88D /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				D9F2E767058CC1A6B767CE6B /* Alamofire.swift */,
-				A311AC412D7C1EC4A8BB45AB /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		9400C698514D1DA841DBDC32 = {
-			isa = PBXGroup;
-			children = (
-				F795895D7B600D1D7A340DDF /* Podfile */,
-				FE330B531EE8F8274C149787 /* Frameworks */,
-				28E59402E5ECA06CA6FFF15C /* Pods */,
-				8051C428ABD8F1005B9ABFA9 /* Products */,
-				AB76AD37018153D3746556C7 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		A311AC412D7C1EC4A8BB45AB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				962654560BD790D19F1B5298 /* Info.plist */,
-				50AD811E57A6CDD496F5349F /* Pods-KaraokeSearch-Alamofire.modulemap */,
-				35232EA0FB2D0C66B96EB436 /* Pods-KaraokeSearch-Alamofire.xcconfig */,
-				8354C2AFF21A7EB62666223C /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */,
-				B7BD72B9A67E747B2A9F3028 /* Pods-KaraokeSearch-Alamofire-dummy.m */,
-				E571BE3C4820E3D5F48B89A9 /* Pods-KaraokeSearch-Alamofire-prefix.pch */,
-				AEE92D442F7F7EF4CD2B99C9 /* Pods-KaraokeSearch-Alamofire-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-KaraokeSearch-Alamofire";
-			sourceTree = "<group>";
-		};
-		AB76AD37018153D3746556C7 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CF4D2B27CF18EBBDC28E91BE /* Pods-KaraokeSearch */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		CF4D2B27CF18EBBDC28E91BE /* Pods-KaraokeSearch */ = {
-			isa = PBXGroup;
-			children = (
-				BA001258EA451466BF10E607 /* Info.plist */,
-				2FE981FF649524018F70E43E /* Pods-KaraokeSearch.modulemap */,
-				967B84DD041574926002E689 /* Pods-KaraokeSearch-acknowledgements.markdown */,
-				8CF5A1DAF42F52C670F6F784 /* Pods-KaraokeSearch-acknowledgements.plist */,
-				AC485A24306D1B34EC8A3863 /* Pods-KaraokeSearch-dummy.m */,
-				D638B4D4E248C3E5C585ADB5 /* Pods-KaraokeSearch-environment.h */,
-				79FEC08889DC7F06DE93B9AB /* Pods-KaraokeSearch-frameworks.sh */,
-				2B93682116DC1F5DC10C550E /* Pods-KaraokeSearch-resources.sh */,
-				AE86822D07883B04949918E0 /* Pods-KaraokeSearch-umbrella.h */,
-				B3C12CE3ABC3600CA96EC167 /* Pods-KaraokeSearch.debug.xcconfig */,
-				931BD7835C4D0281AE3EE127 /* Pods-KaraokeSearch.release.xcconfig */,
+				5245060B6013EDC179044C41 /* Info.plist */,
+				FD379F9AC7716B85E1E8D994 /* Pods-KaraokeSearch.modulemap */,
+				499E257A90C2C000DEB84E3F /* Pods-KaraokeSearch-acknowledgements.markdown */,
+				7B7CBCF77F26E836C98FA2A3 /* Pods-KaraokeSearch-acknowledgements.plist */,
+				9D8F28783228E42D5E805BBA /* Pods-KaraokeSearch-dummy.m */,
+				81BE3A362EF0893255F1BBE5 /* Pods-KaraokeSearch-environment.h */,
+				EE3302BB58C52102E0465B97 /* Pods-KaraokeSearch-frameworks.sh */,
+				F404E58B40322F7075282747 /* Pods-KaraokeSearch-resources.sh */,
+				CFDC064299C71BADCEFA8798 /* Pods-KaraokeSearch-umbrella.h */,
+				7D60F57DD408788EF59BD77F /* Pods-KaraokeSearch.debug.xcconfig */,
+				379F6A7A3F5DEBF5A334A169 /* Pods-KaraokeSearch.release.xcconfig */,
 			);
 			name = "Pods-KaraokeSearch";
 			path = "Target Support Files/Pods-KaraokeSearch";
 			sourceTree = "<group>";
 		};
-		F6DF71984FADFF8A48B6E18A /* MaterialKit */ = {
+		2B2FE444D7E7EBCE65710FBD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				941A6C36AFC8E91B9D93951D /* MKButton.swift */,
-				F1C2C55BDCE4490535EAFFB6 /* MKColor.swift */,
-				D4D624DF7D61B8E40A590F75 /* MKImageView.swift */,
-				C59ED3C6399791AC1B766579 /* MKLabel.swift */,
-				D65546AA5FF371A351D79F7A /* MKLayer.swift */,
-				E04020EAE0691C7AF614B1A0 /* MKTableViewCell.swift */,
-				65035AD058754C296E46D68E /* MKTextField.swift */,
-				3CF01B3C146C2C008442B311 /* Support Files */,
+				4BFF9D787ABA24ED86B95820 /* Info.plist */,
+				CBC65B74FA3130F2C82D7C54 /* Pods-KaraokeSearch-Alamofire.modulemap */,
+				0CE5A9BC8F5165A29329E5C7 /* Pods-KaraokeSearch-Alamofire.xcconfig */,
+				34AF7D12848ECF7985777B54 /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */,
+				B079B33223C76A67D4CBD45A /* Pods-KaraokeSearch-Alamofire-dummy.m */,
+				01AE9A9A590A6DE0ED379511 /* Pods-KaraokeSearch-Alamofire-prefix.pch */,
+				6B7E3DD1BD832E6064B5DCB5 /* Pods-KaraokeSearch-Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-KaraokeSearch-Alamofire";
+			sourceTree = "<group>";
+		};
+		545EA0310146FB8336180BEF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EDA3A5BDB40A8B32220F86F5 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5D1AC411FBE2CB8BCA6DBA7C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				739B84A1FB43972E4D18979A /* Info.plist */,
+				BB6214F6B4410DE12F73A76B /* Pods-KaraokeSearch-MaterialKit.modulemap */,
+				72777304A20580B76CE2FF0E /* Pods-KaraokeSearch-MaterialKit.xcconfig */,
+				62FF5195E39589B63AE2DF15 /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */,
+				819CFFD79E7424F75999F888 /* Pods-KaraokeSearch-MaterialKit-dummy.m */,
+				F052060BEE1759AF3F809154 /* Pods-KaraokeSearch-MaterialKit-prefix.pch */,
+				2213A952F4E32A9B3255CDEB /* Pods-KaraokeSearch-MaterialKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-KaraokeSearch-MaterialKit";
+			sourceTree = "<group>";
+		};
+		694D71667A30039B17F15CD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7151B81E7BBB9548B3DCFDB9 /* Alamofire.framework */,
+				E95D7ED126C82B0E2FFA0607 /* MaterialKit.framework */,
+				6A76C183B2393FF24EC8D477 /* Pods_KaraokeSearch.framework */,
+				8D36C15B0DBF43FF8742B76A /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93D73AA1F6D4902D3EEB8FC2 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				D90DF3062A6D1A0248690C7C /* Alamofire.swift */,
+				2B2FE444D7E7EBCE65710FBD /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		97C6ED4F76B80FB0D7C948F2 /* MaterialKit */ = {
+			isa = PBXGroup;
+			children = (
+				CA8AB30780149CF783C84571 /* MKButton.swift */,
+				E411BFCA8820E92D72B17F5F /* MKColor.swift */,
+				BC502809533892B8C6DBCB25 /* MKImageView.swift */,
+				0DC41188D4F4AE113B8C9011 /* MKLabel.swift */,
+				EE5D89598EE3827F1E900D91 /* MKLayer.swift */,
+				6607BD610A39CCD33E98EF5E /* MKTableViewCell.swift */,
+				A3CEEF65D9B112EFFB731E56 /* MKTextField.swift */,
+				5D1AC411FBE2CB8BCA6DBA7C /* Support Files */,
 			);
 			path = MaterialKit;
 			sourceTree = "<group>";
 		};
-		FE330B531EE8F8274C149787 /* Frameworks */ = {
+		9E8D070DCD0413FF23F1E97B /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
-				4FA9B6146BC96DF62E37DE92 /* iOS */,
+				D319ACEFCEF212078E0C0A9F /* SwiftyJSON.swift */,
+				E759F7184006EB4B15D8D28D /* Support Files */,
 			);
-			name = Frameworks;
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		A62708AFACB628BA1888F50B = {
+			isa = PBXGroup;
+			children = (
+				8C60D91975ABF8B55B9EA70C /* Podfile */,
+				08DA5D139CD2A13E7B306485 /* Frameworks */,
+				238C53B409E1D228A0F681F4 /* Pods */,
+				694D71667A30039B17F15CD9 /* Products */,
+				DA556AE3CC411FE001B9C486 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DA556AE3CC411FE001B9C486 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2982963C0E31ED320D783855 /* Pods-KaraokeSearch */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E759F7184006EB4B15D8D28D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				60DCB34C85AAA6AE89B84740 /* Info.plist */,
+				BF433AAD50C698D6806F2C2E /* Pods-KaraokeSearch-SwiftyJSON.modulemap */,
+				9FA3ADE530F5215B91692FCB /* Pods-KaraokeSearch-SwiftyJSON.xcconfig */,
+				870CBEF7D516B6151ADA05B7 /* Pods-KaraokeSearch-SwiftyJSON-Private.xcconfig */,
+				FA61D3D5A2659917C928FBC1 /* Pods-KaraokeSearch-SwiftyJSON-dummy.m */,
+				70D90D7BF868947F42FA867A /* Pods-KaraokeSearch-SwiftyJSON-prefix.pch */,
+				43778AD307495B4604D8DBE1 /* Pods-KaraokeSearch-SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-KaraokeSearch-SwiftyJSON";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0FA629C04831063B86228F4A /* Headers */ = {
+		1BF28FDBF9D5551EEAD97298 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F092A69B3E203B53D9F11AD4 /* Pods-KaraokeSearch-Alamofire-umbrella.h in Headers */,
+				6465CFE3CC3D5B8500AC34CE /* Pods-KaraokeSearch-MaterialKit-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30028E7CACDCCEB8E8F2434C /* Headers */ = {
+		30EB6C6389A66B43D684ADB4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C21D627E8F2BE914595A64 /* Pods-KaraokeSearch-MaterialKit-umbrella.h in Headers */,
+				20290CBFF253197D1D12D0C3 /* Pods-KaraokeSearch-SwiftyJSON-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB9489CDF9FA33ECCBB9D1CC /* Headers */ = {
+		3E49D04401DF8E33DB4539A9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9164EFB9EDEE378727A693CD /* Pods-KaraokeSearch-umbrella.h in Headers */,
+				C8B94661D79F46A4A98D48AF /* Pods-KaraokeSearch-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A4BE093C999A784377A875 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78DA929942701AE3ADF0A0B9 /* Pods-KaraokeSearch-Alamofire-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6383D82148C4C8AECAB007E8 /* Pods-KaraokeSearch */ = {
+		0C7315C782B201EA81A3F27E /* Pods-KaraokeSearch-MaterialKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 270C7754EEF0ED65A87AF82E /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch" */;
+			buildConfigurationList = 9FEE8EEEB3EA3C02688AD270 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-MaterialKit" */;
 			buildPhases = (
-				B779AEA3EBAFE9BC4B658961 /* Sources */,
-				BC350AF4349F3E0583DC78CF /* Frameworks */,
-				DB9489CDF9FA33ECCBB9D1CC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B621826B48D16F657A4E5FB1 /* PBXTargetDependency */,
-				190D54E499E23496DA2927FB /* PBXTargetDependency */,
-			);
-			name = "Pods-KaraokeSearch";
-			productName = "Pods-KaraokeSearch";
-			productReference = F20B80040E5CF588025220C7 /* Pods_KaraokeSearch.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		67C7AFFD0ABDD47BB619B39A /* Pods-KaraokeSearch-Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EAE99377509A2BBA43068253 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-Alamofire" */;
-			buildPhases = (
-				D3F168A5B5EBDC7E0797AE86 /* Sources */,
-				AE276E1E950AB954E5E4C873 /* Frameworks */,
-				0FA629C04831063B86228F4A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-KaraokeSearch-Alamofire";
-			productName = "Pods-KaraokeSearch-Alamofire";
-			productReference = A390A7891D2512758AC7E402 /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A104D160A7AE7018DECD5465 /* Pods-KaraokeSearch-MaterialKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 74C62AB6E214A4DC8C3252A2 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-MaterialKit" */;
-			buildPhases = (
-				5C86B70310C59AA91B21FAFB /* Sources */,
-				BCC164D9AB4F2AE82872941C /* Frameworks */,
-				30028E7CACDCCEB8E8F2434C /* Headers */,
+				E5C10CFD2DE8B0696A9CB82D /* Sources */,
+				CDDC700D5F50D83AA9800594 /* Frameworks */,
+				1BF28FDBF9D5551EEAD97298 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -319,90 +345,160 @@
 			);
 			name = "Pods-KaraokeSearch-MaterialKit";
 			productName = "Pods-KaraokeSearch-MaterialKit";
-			productReference = 68E25372C8D1BEE473E46382 /* MaterialKit.framework */;
+			productReference = E95D7ED126C82B0E2FFA0607 /* MaterialKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3F6F82E565E67EE2AB28048F /* Pods-KaraokeSearch-Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABB06899E51901B6F40964DD /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-Alamofire" */;
+			buildPhases = (
+				167FF7E2A2FB129D85B2C2C4 /* Sources */,
+				AA9802884898852996257CE9 /* Frameworks */,
+				E0A4BE093C999A784377A875 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KaraokeSearch-Alamofire";
+			productName = "Pods-KaraokeSearch-Alamofire";
+			productReference = 7151B81E7BBB9548B3DCFDB9 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5A9172311E19185E44A05CD3 /* Pods-KaraokeSearch-SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE876291B7B23C9BE04B60BE /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-SwiftyJSON" */;
+			buildPhases = (
+				0AAF8E0C8FA570D87460B389 /* Sources */,
+				9FEC9258EB66D6B4565F2AE5 /* Frameworks */,
+				30EB6C6389A66B43D684ADB4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KaraokeSearch-SwiftyJSON";
+			productName = "Pods-KaraokeSearch-SwiftyJSON";
+			productReference = 8D36C15B0DBF43FF8742B76A /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D75584A821BA59B7EAB46369 /* Pods-KaraokeSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F1C1468ED4DB1C55EC57A4D /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch" */;
+			buildPhases = (
+				966FABB75E5AA23C65756354 /* Sources */,
+				4E3C3B4441E830C8750B8392 /* Frameworks */,
+				3E49D04401DF8E33DB4539A9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0F3FC835571DCB59732608B /* PBXTargetDependency */,
+				52EB58CFA0F2810E16E0A019 /* PBXTargetDependency */,
+				EA5B488A5B9CF7344B504F62 /* PBXTargetDependency */,
+			);
+			name = "Pods-KaraokeSearch";
+			productName = "Pods-KaraokeSearch";
+			productReference = 6A76C183B2393FF24EC8D477 /* Pods_KaraokeSearch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E20CA62EA3BDFCD179F29DF2 /* Project object */ = {
+		52DB06ED30649362E990F75C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 2231662F71EC4D6A0AF884E5 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 44E9384E4D600D66713CAD11 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 9400C698514D1DA841DBDC32;
-			productRefGroup = 8051C428ABD8F1005B9ABFA9 /* Products */;
+			mainGroup = A62708AFACB628BA1888F50B;
+			productRefGroup = 694D71667A30039B17F15CD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6383D82148C4C8AECAB007E8 /* Pods-KaraokeSearch */,
-				67C7AFFD0ABDD47BB619B39A /* Pods-KaraokeSearch-Alamofire */,
-				A104D160A7AE7018DECD5465 /* Pods-KaraokeSearch-MaterialKit */,
+				D75584A821BA59B7EAB46369 /* Pods-KaraokeSearch */,
+				3F6F82E565E67EE2AB28048F /* Pods-KaraokeSearch-Alamofire */,
+				0C7315C782B201EA81A3F27E /* Pods-KaraokeSearch-MaterialKit */,
+				5A9172311E19185E44A05CD3 /* Pods-KaraokeSearch-SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5C86B70310C59AA91B21FAFB /* Sources */ = {
+		0AAF8E0C8FA570D87460B389 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD397317DB03CC052261B333 /* MKButton.swift in Sources */,
-				89FAFFF922B89334B36B5EFE /* MKColor.swift in Sources */,
-				DBC79A548CBC17DB0085C84D /* MKImageView.swift in Sources */,
-				45F052B86A31DCB0AFD6A1D2 /* MKLabel.swift in Sources */,
-				63C71E96F66C1F0F8F79D642 /* MKLayer.swift in Sources */,
-				EC249F811B56FDDF16C9A5CD /* MKTableViewCell.swift in Sources */,
-				2938340243A8AE0BB7CA064B /* MKTextField.swift in Sources */,
-				CB2EAF7FA30B08EE09340792 /* Pods-KaraokeSearch-MaterialKit-dummy.m in Sources */,
+				89787FE44847F9A4965B625C /* Pods-KaraokeSearch-SwiftyJSON-dummy.m in Sources */,
+				DBA580ECB42829B2D3B288BA /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B779AEA3EBAFE9BC4B658961 /* Sources */ = {
+		167FF7E2A2FB129D85B2C2C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B542187FE3ACE05531B52400 /* Pods-KaraokeSearch-dummy.m in Sources */,
+				C7FDA37B6711C44F89A5A944 /* Alamofire.swift in Sources */,
+				688CC8E9642A77873EE39A41 /* Pods-KaraokeSearch-Alamofire-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3F168A5B5EBDC7E0797AE86 /* Sources */ = {
+		966FABB75E5AA23C65756354 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E5100F346100F8208C5252 /* Alamofire.swift in Sources */,
-				AA925D26322D80034FBC0358 /* Pods-KaraokeSearch-Alamofire-dummy.m in Sources */,
+				D040B8351FD9CFC2D1326801 /* Pods-KaraokeSearch-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C10CFD2DE8B0696A9CB82D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3333F2857F75670229F48EF0 /* MKButton.swift in Sources */,
+				E786845C02294DC4ECCEE11A /* MKColor.swift in Sources */,
+				7C3294674DA9AC94233D4790 /* MKImageView.swift in Sources */,
+				0462B5674C6EBF6D201A1EAD /* MKLabel.swift in Sources */,
+				C7AF55910E7C8781F481B526 /* MKLayer.swift in Sources */,
+				3DC0BAD39EF69CF022308339 /* MKTableViewCell.swift in Sources */,
+				CCE8D0D6FF8C008BDC4945F2 /* MKTextField.swift in Sources */,
+				76199AF2A4E55942A01B30A6 /* Pods-KaraokeSearch-MaterialKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		190D54E499E23496DA2927FB /* PBXTargetDependency */ = {
+		52EB58CFA0F2810E16E0A019 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-KaraokeSearch-MaterialKit";
-			target = A104D160A7AE7018DECD5465 /* Pods-KaraokeSearch-MaterialKit */;
-			targetProxy = 486387918D68B017F1CF7DDA /* PBXContainerItemProxy */;
+			target = 0C7315C782B201EA81A3F27E /* Pods-KaraokeSearch-MaterialKit */;
+			targetProxy = 17F105C37EC70811E156C960 /* PBXContainerItemProxy */;
 		};
-		B621826B48D16F657A4E5FB1 /* PBXTargetDependency */ = {
+		D0F3FC835571DCB59732608B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-KaraokeSearch-Alamofire";
-			target = 67C7AFFD0ABDD47BB619B39A /* Pods-KaraokeSearch-Alamofire */;
-			targetProxy = BE0633D5E311BD5023B6957B /* PBXContainerItemProxy */;
+			target = 3F6F82E565E67EE2AB28048F /* Pods-KaraokeSearch-Alamofire */;
+			targetProxy = 109C7220C04CFAC23849E57D /* PBXContainerItemProxy */;
+		};
+		EA5B488A5B9CF7344B504F62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-KaraokeSearch-SwiftyJSON";
+			target = 5A9172311E19185E44A05CD3 /* Pods-KaraokeSearch-SwiftyJSON */;
+			targetProxy = E04078D460ABDA8273CACDAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		02CF1DB1BBBAC2BFAC42DC1D /* Debug */ = {
+		2B77B8A385AC968D13ADE4DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8354C2AFF21A7EB62666223C /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */;
+			baseConfigurationReference = 34AF7D12848ECF7985777B54 /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -417,20 +513,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-Alamofire/Pods-KaraokeSearch-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		1487305E998E4BDA441B2B28 /* Release */ = {
+		2CFB590A96F2F0569C6D53BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 931BD7835C4D0281AE3EE127 /* Pods-KaraokeSearch.release.xcconfig */;
+			baseConfigurationReference = 7D60F57DD408788EF59BD77F /* Pods-KaraokeSearch.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -444,22 +539,23 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_KaraokeSearch;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		29F8A035AFE359C26D06B347 /* Debug */ = {
+		6E74455E0FCD134071B9253F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828A5DC9A99C016B7A21435E /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */;
+			baseConfigurationReference = 62FF5195E39589B63AE2DF15 /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -474,18 +570,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Pods-KaraokeSearch-MaterialKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MaterialKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4591B7ADCF2CE0072B695E11 /* Release */ = {
+		85F3C9E452194CC239EF01D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -519,7 +614,36 @@
 			};
 			name = Release;
 		};
-		9A035BD29C939DEC19EBBEFA /* Debug */ = {
+		B12677DC68A7C7C0E0BA119F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 379F6A7A3F5DEBF5A334A169 /* Pods-KaraokeSearch.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_KaraokeSearch;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD288084D2E357000B62ABF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -558,9 +682,9 @@
 			};
 			name = Debug;
 		};
-		A6A4A89677B904285D5A3E42 /* Release */ = {
+		CAA03FA69823BF89E3CE672A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828A5DC9A99C016B7A21435E /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */;
+			baseConfigurationReference = 870CBEF7D516B6151ADA05B7 /* Pods-KaraokeSearch-SwiftyJSON-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -569,14 +693,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Pods-KaraokeSearch-MaterialKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Pods-KaraokeSearch-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Pods-KaraokeSearch-MaterialKit.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Pods-KaraokeSearch-SwiftyJSON.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MaterialKit;
+				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -585,39 +709,9 @@
 			};
 			name = Release;
 		};
-		AD79063C28D5E1B6D6F2C6E3 /* Debug */ = {
+		CACA9718847D2FE6EF73D2B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3C12CE3ABC3600CA96EC167 /* Pods-KaraokeSearch.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_KaraokeSearch;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DDAD9EE52F35738E2EEE93C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8354C2AFF21A7EB62666223C /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */;
+			baseConfigurationReference = 34AF7D12848ECF7985777B54 /* Pods-KaraokeSearch-Alamofire-Private.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -632,56 +726,122 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-Alamofire/Pods-KaraokeSearch-Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		D3604D84326422243866318A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 870CBEF7D516B6151ADA05B7 /* Pods-KaraokeSearch-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Pods-KaraokeSearch-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-SwiftyJSON/Pods-KaraokeSearch-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EFD1BE86B1A8809346049E32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62FF5195E39589B63AE2DF15 /* Pods-KaraokeSearch-MaterialKit-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Pods-KaraokeSearch-MaterialKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-KaraokeSearch-MaterialKit/Pods-KaraokeSearch-MaterialKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MaterialKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2231662F71EC4D6A0AF884E5 /* Build configuration list for PBXProject "Pods" */ = {
+		2F1C1468ED4DB1C55EC57A4D /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9A035BD29C939DEC19EBBEFA /* Debug */,
-				4591B7ADCF2CE0072B695E11 /* Release */,
+				2CFB590A96F2F0569C6D53BE /* Debug */,
+				B12677DC68A7C7C0E0BA119F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		270C7754EEF0ED65A87AF82E /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch" */ = {
+		44E9384E4D600D66713CAD11 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AD79063C28D5E1B6D6F2C6E3 /* Debug */,
-				1487305E998E4BDA441B2B28 /* Release */,
+				BD288084D2E357000B62ABF1 /* Debug */,
+				85F3C9E452194CC239EF01D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74C62AB6E214A4DC8C3252A2 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-MaterialKit" */ = {
+		9FEE8EEEB3EA3C02688AD270 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-MaterialKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29F8A035AFE359C26D06B347 /* Debug */,
-				A6A4A89677B904285D5A3E42 /* Release */,
+				EFD1BE86B1A8809346049E32 /* Debug */,
+				6E74455E0FCD134071B9253F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAE99377509A2BBA43068253 /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-Alamofire" */ = {
+		ABB06899E51901B6F40964DD /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-Alamofire" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02CF1DB1BBBAC2BFAC42DC1D /* Debug */,
-				DDAD9EE52F35738E2EEE93C2 /* Release */,
+				CACA9718847D2FE6EF73D2B1 /* Debug */,
+				2B77B8A385AC968D13ADE4DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE876291B7B23C9BE04B60BE /* Build configuration list for PBXNativeTarget "Pods-KaraokeSearch-SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3604D84326422243866318A /* Debug */,
+				CAA03FA69823BF89E3CE672A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E20CA62EA3BDFCD179F29DF2 /* Project object */;
+	rootObject = 52DB06ED30649362E990F75C /* Project object */;
 }

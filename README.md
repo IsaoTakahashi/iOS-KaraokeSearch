@@ -6,13 +6,13 @@ iOS client application for Karaoke Search.
 ## Functionality
   Checked function is available now.
 ### Search
-- [ ] Search Songs with Artist Name
+- [x] Search Songs with Artist Name
   + [ ] OR Search
   + [ ] AND Search
-- [ ] Search Songs with Song Title
+- [x] Search Songs with Song Title
   + [ ] OR Search
   + [ ] AND Search
-- [ ] Search Songs with Artist & Title
+- [x] Search Songs with Artist & Title
   + [ ] OR Search
   + [ ] AND Search
 - [ ] Order Search of Result

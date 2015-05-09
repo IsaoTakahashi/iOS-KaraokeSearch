@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'KaraokeSearch' do
     pod 'Alamofire', '~> 1.2'
+    pod 'SwiftyJSON'
     pod 'MaterialKit'
 end
 
