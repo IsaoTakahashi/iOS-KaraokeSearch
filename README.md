@@ -6,28 +6,35 @@ iOS client application for Karaoke Search.
 ## Functionality
   Checked function is available now.
 ### Search
-- [ ] Search Songs with Artist Name
+- [x] Search Songs with Artist Name
   + [ ] OR Search
   + [ ] AND Search
-- [ ] Search Songs with Song Title
+- [x] Search Songs with Song Title
   + [ ] OR Search
   + [ ] AND Search
-- [ ] Search Songs with Artist & Title
+- [x] Search Songs with Artist & Title
   + [ ] OR Search
   + [ ] AND Search
-- [ ] Order Search of Result
-  + [ ] A-Z ASC/DSC
-  + [ ] Registered Date ASC/DSC
+- [x] Order Search of Result
+  + [x] Artist Name ASC/DESC
+  + [x] Song Title ASC/DESC
+  + [x] Registered Date ASC/DSC
+  + [x] Song ID ASC/DESC
 - [ ] Squeeze Result of Search
   + [ ] for Artist Name
   + [ ] for Song Title
+  + [ ] for Registered Date
 
 ### Personal Utility
 - [ ] Register Favorite Artist
   + [ ] Search Songs with Favorite Artists
     * [ ] List songs of the Artist
-    * [ ] Fileter
+    * [ ] Filter
 - [ ] Register Favorite Song
   + [ ] Record Karaoke History for each Song
     * [ ] Count of Singing
     * [ ] When/Where Singing
+  + [ ] Display Timeline of History
+  + [ ] Search Song via Youtube
+  + [ ] Search Lyrics via Google
+- [ ] Create Set List

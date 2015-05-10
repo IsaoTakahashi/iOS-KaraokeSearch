@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BaseViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        println("Hello")
+        
+        self.tabBar.tintColor = UIColor.whiteColor()
+        self.tabBar.barTintColor = UIColor.NavBarColor()
     }
 
     override func didReceiveMemoryWarning() {
