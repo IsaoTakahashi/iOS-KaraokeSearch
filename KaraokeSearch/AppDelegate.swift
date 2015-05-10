@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SugarRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let stack: DefaultCDStack = DefaultCDStack(databaseName: "KaraokeSearch.sqlite", automigrating: true)
+        stack.autoSaving = true
+        SugarRecord.addStack(stack)
         return true
     }
 

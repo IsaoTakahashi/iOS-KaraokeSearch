@@ -15,6 +15,7 @@ class FavSongTableViewCell: MKTableViewCell {
     @IBOutlet weak var songLabel: MKLabel!
     @IBOutlet weak var registeredLabel: MKLabel!
 
+    var dateFormatter: NSDateFormatter = NSDateFormatter()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,14 +26,16 @@ class FavSongTableViewCell: MKTableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func configureCell(song: Song, atIndexPath indexPath: NSIndexPath){
+    func configureCell(song: FavoredSong, atIndexPath indexPath: NSIndexPath){
         
         artistLabel.textColor = UIColor.MainDarkColor()
         songLabel.textColor = UIColor.MainDarkColor()
         
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         artistLabel.text = song.artistName
         songLabel.text = song.songTitle
-        registeredLabel.text = song.createdAt.componentsSeparatedByString("T")[0]
+        registeredLabel.text = "faved at: " + dateFormatter.stringFromDate(song.favoredAt)
         registeredLabel.textColor = UIColor.SubDarkColor()
         
         self.rippleLocation = .TapLocation

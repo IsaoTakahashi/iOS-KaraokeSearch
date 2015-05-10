@@ -7,6 +7,7 @@ target 'KaraokeSearch' do
     pod 'Alamofire', '~> 1.2'
     pod 'SwiftyJSON'
     pod 'MaterialKit'
+    pod 'SugarRecord/CoreData', :git => 'https://github.com/SugarRecord/SugarRecord.git'
 end
 
 target 'KaraokeSearchTests' do
