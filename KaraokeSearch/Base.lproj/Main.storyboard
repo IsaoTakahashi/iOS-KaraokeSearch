@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="urT-ak-nkN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="urT-ak-nkN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavSongCell" rowHeight="65" id="HkZ-3R-4G6" customClass="FavSongTableViewCell" customModule="KaraokeSearch" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavSongCell" rowHeight="70" id="HkZ-3R-4G6" customClass="FavSongTableViewCell" customModule="KaraokeSearch" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HkZ-3R-4G6" id="bPi-B9-AjE">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -60,6 +60,7 @@
                                             <outlet property="artistLabel" destination="ZeK-9x-b9T" id="v0Z-hd-aH9"/>
                                             <outlet property="registeredLabel" destination="YFp-Ex-sVd" id="m8V-Ij-RuB"/>
                                             <outlet property="songLabel" destination="DZV-8K-nPi" id="0WI-fS-2PY"/>
+                                            <segue destination="IQ8-z4-SRD" kind="show" identifier="showSongInfo" id="quB-7D-zGZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -73,9 +74,16 @@
                             <constraint firstItem="urT-ak-nkN" firstAttribute="leading" secondItem="exk-ZU-AOr" secondAttribute="leading" id="o4N-Er-ffJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorites" id="d3G-5e-aGY"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="d3G-5e-aGY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="XVr-8z-gCZ">
+                            <connections>
+                                <action selector="clickRefresh:" destination="bV8-l8-NG9" id="Zej-A5-bX8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favSongTableView" destination="urT-ak-nkN" id="HPR-0I-b0f"/>
+                        <outlet property="refreshButton" destination="XVr-8z-gCZ" id="lVM-tv-lzC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxk-82-SU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahm-XB-gzs" customClass="MKTextField" customModule="MaterialKit">
-                                <rect key="frame" x="46" y="84" width="508" height="30"/>
+                                <rect key="frame" x="26" y="84" width="548" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -105,7 +113,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="frS-V7-QYk" customClass="MKTextField" customModule="MaterialKit">
-                                <rect key="frame" x="46" y="124" width="508" height="30"/>
+                                <rect key="frame" x="26" y="124" width="548" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -176,7 +184,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmW-pM-jme" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="514" y="169" width="40" height="36"/>
+                                <rect key="frame" x="534" y="169" width="40" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="↑↓">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,7 +197,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="frS-V7-QYk" firstAttribute="top" secondItem="ahm-XB-gzs" secondAttribute="bottom" constant="10" id="14a-vz-CXW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="frS-V7-QYk" secondAttribute="trailing" constant="30" id="4Sa-ci-c0u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="frS-V7-QYk" secondAttribute="trailing" constant="10" id="4Sa-ci-c0u"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Wre-Zk-0kA" secondAttribute="bottom" constant="50" id="5l2-q4-WrA"/>
                             <constraint firstItem="VCN-8s-aIi" firstAttribute="leading" secondItem="d2H-pu-4mH" secondAttribute="trailing" constant="10" id="7A9-Rn-apv"/>
                             <constraint firstItem="d2H-pu-4mH" firstAttribute="top" secondItem="frS-V7-QYk" secondAttribute="bottom" constant="15" id="7qz-ti-q1Y"/>
@@ -199,12 +207,12 @@
                             <constraint firstAttribute="centerX" secondItem="d2H-pu-4mH" secondAttribute="centerX" id="J5x-Rl-iw8"/>
                             <constraint firstItem="mmW-pM-jme" firstAttribute="trailing" secondItem="frS-V7-QYk" secondAttribute="trailing" id="P27-Tk-DTQ"/>
                             <constraint firstAttribute="trailing" secondItem="Wre-Zk-0kA" secondAttribute="trailing" id="SKS-Ch-sf0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ahm-XB-gzs" secondAttribute="trailing" constant="30" id="Sc7-SF-Ne1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ahm-XB-gzs" secondAttribute="trailing" constant="10" id="Sc7-SF-Ne1"/>
                             <constraint firstItem="ahm-XB-gzs" firstAttribute="top" secondItem="fgA-Oh-J8F" secondAttribute="bottom" constant="20" id="Z7I-IX-d0B"/>
                             <constraint firstItem="mmW-pM-jme" firstAttribute="centerY" secondItem="d2H-pu-4mH" secondAttribute="centerY" id="biX-Hq-76l"/>
                             <constraint firstAttribute="centerX" secondItem="Wre-Zk-0kA" secondAttribute="centerX" id="eIa-KD-EDf"/>
-                            <constraint firstItem="frS-V7-QYk" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="30" id="fm6-kR-7LY"/>
-                            <constraint firstItem="ahm-XB-gzs" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="30" id="rje-gV-GhS"/>
+                            <constraint firstItem="frS-V7-QYk" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="10" id="fm6-kR-7LY"/>
+                            <constraint firstItem="ahm-XB-gzs" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="10" id="rje-gV-GhS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Song" id="pmL-46-rss"/>
@@ -341,13 +349,23 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcM-f6-NPD">
                                 <rect key="frame" x="507" y="249" width="77" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYw-2U-rDG" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="559" y="154" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="554" y="148" width="35" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="★"/>
+                                <connections>
+                                    <action selector="clickFavorite:" destination="IQ8-z4-SRD" eventType="touchUpInside" id="SgO-gT-zeL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9W-9L-iC5" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="468" y="209" width="56" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Youtube">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,6 +376,8 @@
                             <constraint firstItem="CYw-2U-rDG" firstAttribute="trailing" secondItem="DfM-9e-0cB" secondAttribute="trailingMargin" constant="5" id="5gj-cG-JOO"/>
                             <constraint firstItem="nwq-VE-7Um" firstAttribute="top" secondItem="xpc-ww-coQ" secondAttribute="bottom" id="6c2-Te-Px3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RUx-fo-Hc2" secondAttribute="trailing" id="95i-wj-Xvr"/>
+                            <constraint firstItem="ryp-uy-9rd" firstAttribute="leading" secondItem="w9W-9L-iC5" secondAttribute="trailing" constant="20" id="Baf-aD-6Qq"/>
+                            <constraint firstItem="ryp-uy-9rd" firstAttribute="centerY" secondItem="w9W-9L-iC5" secondAttribute="centerY" id="BvJ-bJ-BbI"/>
                             <constraint firstItem="y42-FK-HT5" firstAttribute="top" secondItem="RUx-fo-Hc2" secondAttribute="bottom" constant="5" id="EY5-YM-32F"/>
                             <constraint firstItem="naS-n3-mfc" firstAttribute="leading" secondItem="DfM-9e-0cB" secondAttribute="leading" id="JX6-AR-wa1"/>
                             <constraint firstItem="tnY-eS-2L1" firstAttribute="leading" secondItem="DfM-9e-0cB" secondAttribute="leadingMargin" id="QLH-hi-jDr"/>
@@ -383,9 +403,11 @@
                         <outlet property="artistNameLabel" destination="RUx-fo-Hc2" id="K9B-tw-8Ak"/>
                         <outlet property="descLabel" destination="xpc-ww-coQ" id="IqB-WU-S38"/>
                         <outlet property="descriptionLabel" destination="nwq-VE-7Um" id="ObD-Ee-4VO"/>
+                        <outlet property="lyricsButton" destination="ryp-uy-9rd" id="zX1-Zf-z8m"/>
                         <outlet property="songFavButton" destination="CYw-2U-rDG" id="hrh-dB-VLr"/>
                         <outlet property="songLabel" destination="y42-FK-HT5" id="86E-Aw-jvL"/>
                         <outlet property="songTitleLabel" destination="Juy-xK-moq" id="j76-uP-4sy"/>
+                        <outlet property="youtubeButton" destination="w9W-9L-iC5" id="rcH-dJ-b0Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnU-hD-Buq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -456,4 +478,7 @@
             <point key="canvasLocation" x="285" y="795"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3tT-0J-wsX"/>
+    </inferredMetricsTieBreakers>
 </document>

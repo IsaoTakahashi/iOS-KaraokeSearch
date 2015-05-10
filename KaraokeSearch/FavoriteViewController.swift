@@ -7,17 +7,41 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
+import SugarRecord
 
 class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var favSongTableView: UITableView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
-    var songs = [Song]()
+    var songs = [FavoredSong]()
+    
+    func reloadFavSongs() {
+        songs.removeAll(keepCapacity: false)
+        
+        let results: SugarRecordResults = FavoredSong.all().sorted(by: "favoredAt", ascending: true).find()
+        
+        for result: AnyObject in results {
+            let song = result as! FavoredSong
+            songs.append(song)
+        }
+        
+        favSongTableView.reloadData()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        favSongTableView.delegate = self
+        favSongTableView.dataSource = self
+        
+        refreshButton.tintColor = UIColor.whiteColor()
+        
+        reloadFavSongs()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +60,13 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     
+    @IBAction func clickRefresh(sender: AnyObject) {
+        reloadFavSongs()
+    }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FavSongCell", forIndexPath: indexPath) as! SongTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("FavSongCell", forIndexPath: indexPath) as! FavSongTableViewCell
         let song = songs[indexPath.row]
         cell.configureCell(song, atIndexPath: indexPath)
         return cell
@@ -50,6 +79,19 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showSongInfo") {
+            let selectedCell = sender as! FavSongTableViewCell
+            let nextViewController: SongInfoViewController = segue.destinationViewController as! SongInfoViewController
+            
+            let targetFavSong = songs[favSongTableView.indexPathForCell(selectedCell)!.row]
+            
+            let song: Song = Song(id: targetFavSong.id.integerValue, artistId: targetFavSong.artistId.integerValue, artistName: targetFavSong.artistName, artistNameSearch: targetFavSong.artistName, songId: targetFavSong.songId.integerValue, songTitle: targetFavSong.songTitle, songTitleSearch: targetFavSong.songTitle, createdAt: targetFavSong.registeredAt, updatedAt: targetFavSong.registeredAt)
+            
+            nextViewController.song = song
+        }
     }
 
 }

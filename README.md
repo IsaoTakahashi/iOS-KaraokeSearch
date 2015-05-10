@@ -30,7 +30,7 @@ iOS client application for Karaoke Search.
   + [ ] Search Songs with Favorite Artists
     * [ ] List songs of the Artist
     * [ ] Filter
-- [ ] Register Favorite Song
+- [x] Register Favorite Song
   + [ ] Record Karaoke History for each Song
     * [ ] Count of Singing
     * [ ] When/Where Singing

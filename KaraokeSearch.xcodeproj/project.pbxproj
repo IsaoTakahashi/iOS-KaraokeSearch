@@ -26,6 +26,7 @@
 		4D959CEA1AFF3578002ACA15 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */; };
 		4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */; };
 		4D959CEE1AFF423B002ACA15 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CED1AFF423B002ACA15 /* SortViewController.swift */; };
+		4D959CF01AFF73C4002ACA15 /* FavoredSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CEF1AFF73C4002ACA15 /* FavoredSong.swift */; };
 		9B7D57F11226F811FBA24797 /* Pods_KaraokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412DA1AA204BD4DE10D6C53 /* Pods_KaraokeSearch.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavSongTableViewCell.swift; sourceTree = "<group>"; };
 		4D959CED1AFF423B002ACA15 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
+		4D959CEF1AFF73C4002ACA15 /* FavoredSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoredSong.swift; sourceTree = "<group>"; };
 		7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,19 +121,20 @@
 		4D5236BF1AFD9A9700D27C3C /* KaraokeSearch */ = {
 			isa = PBXGroup;
 			children = (
-				4D959CE31AFE44EA002ACA15 /* JHProgressHUD.swift */,
-				4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */,
-				4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */,
-				4D5236C91AFD9A9700D27C3C /* Main.storyboard */,
-				4D959CE51AFF1640002ACA15 /* SongInfoViewController.swift */,
 				4D5236CC1AFD9A9700D27C3C /* Images.xcassets */,
+				4D5236C01AFD9A9700D27C3C /* Supporting Files */,
+				4D5236C91AFD9A9700D27C3C /* Main.storyboard */,
 				4D5236CE1AFD9A9700D27C3C /* LaunchScreen.xib */,
 				4D5236C41AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld */,
-				4D5236C01AFD9A9700D27C3C /* Supporting Files */,
-				4D5236E51AFDBDE000D27C3C /* SearchNavigationController.swift */,
 				4D5236E71AFDC00400D27C3C /* UIColorExtension.swift */,
+				4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */,
+				4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */,
+				4D959CEF1AFF73C4002ACA15 /* FavoredSong.swift */,
+				4D959CE31AFE44EA002ACA15 /* JHProgressHUD.swift */,
+				4D5236E51AFDBDE000D27C3C /* SearchNavigationController.swift */,
 				4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */,
 				4D5236ED1AFDF74200D27C3C /* Song.swift */,
+				4D959CE51AFF1640002ACA15 /* SongInfoViewController.swift */,
 				4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */,
 				4D959CE71AFF3057002ACA15 /* FavoriteNavigationController.swift */,
 				4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */,
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D959CF01AFF73C4002ACA15 /* FavoredSong.swift in Sources */,
 				4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */,
 				4D959CE61AFF1640002ACA15 /* SongInfoViewController.swift in Sources */,
 				4D5236E61AFDBDE000D27C3C /* SearchNavigationController.swift in Sources */,
