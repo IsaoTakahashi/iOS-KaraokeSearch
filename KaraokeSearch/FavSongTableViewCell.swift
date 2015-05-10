@@ -1,26 +1,26 @@
 //
-//  SongTableViewCell.swift
+//  FavSongTableViewCell.swift
 //  KaraokeSearch
 //
-//  Created by 高橋 勲 on 2015/05/09.
+//  Created by 高橋 勲 on 2015/05/10.
 //  Copyright (c) 2015年 高橋 勲. All rights reserved.
 //
 
 import UIKit
 import MaterialKit
 
-class SongTableViewCell: MKTableViewCell {
-    
+class FavSongTableViewCell: MKTableViewCell {
     
     @IBOutlet weak var artistLabel: MKLabel!
     @IBOutlet weak var songLabel: MKLabel!
     @IBOutlet weak var registeredLabel: MKLabel!
+
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         // UILabelとかを追加
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

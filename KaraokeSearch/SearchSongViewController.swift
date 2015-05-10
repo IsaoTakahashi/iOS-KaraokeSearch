@@ -11,20 +11,26 @@ import MaterialKit
 import QuartzCore
 import Alamofire
 
-class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortViewControllerDelegate  {
     
     @IBOutlet weak var artistTextField: MKTextField!
     @IBOutlet weak var songTextField: MKTextField!
     @IBOutlet weak var searchButton: MKButton!
     @IBOutlet weak var resultCountLabel: MKLabel!
+    @IBOutlet weak var sortButton: MKButton!
+    
     @IBOutlet weak var resultTableView: UITableView!
     
     var songs = [Song]()
 
     func initializeSearchComponent() {
-        artistTextField.backgroundColor = UIColor.whiteColor()
-        artistTextField.attributedPlaceholder = NSAttributedString(string: "Artist Name")
-        songTextField.attributedPlaceholder = NSAttributedString(string: "Song Title")
+        artistTextField.textColor = UIColor.TextFieldTextColor()
+        artistTextField.layer.borderColor = UIColor.MainLightColor().CGColor
+        artistTextField.attributedPlaceholder = NSAttributedString(string: "Artist Name", attributes: [NSForegroundColorAttributeName : UIColor.MainLightColor()])
+
+        songTextField.textColor = UIColor.TextFieldTextColor()
+        songTextField.layer.borderColor = UIColor.MainLightColor().CGColor
+        songTextField.attributedPlaceholder = NSAttributedString(string: "Song Title", attributes: [NSForegroundColorAttributeName : UIColor.MainLightColor()])
         
         searchButton.maskEnabled = false
         searchButton.ripplePercent = 0.5
@@ -34,9 +40,16 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         searchButton.layer.shadowRadius = 5.0
         searchButton.layer.shadowColor = UIColor.grayColor().CGColor
         searchButton.layer.shadowOffset = CGSize(width: 0, height: 2.5)
-        searchButton.backgroundColor = UIColor.rgbhex("28AD74", alpha: 1.0)
-        searchButton.tintColor = UIColor.whiteColor()
-        resultCountLabel.textColor = UIColor.rgbhex("28AD74", alpha: 1.0)
+        searchButton.backgroundColor = UIColor.ButtonBKColor()
+        searchButton.tintColor = UIColor.ButtonTextColor()
+        resultCountLabel.textColor = UIColor.ButtonBKColor()
+        
+        sortButton.maskEnabled = false
+        sortButton.ripplePercent = 0.5
+        sortButton.backgroundAniEnabled = false
+        sortButton.rippleLocation = .Center
+        sortButton.tintColor = UIColor.ButtonBKColor()
+        sortButton.enabled = false
     }
     
     func initializeResultTableComponent() {
@@ -73,6 +86,10 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         
         // clear result of search
         songs.removeAll(keepCapacity: false)
+        JHProgressHUD.sharedHUD.showInView(self.view, withHeader: "", andFooter: "Searching...")
+        
+        artistTextField.resignFirstResponder()
+        songTextField.resignFirstResponder()
         
         let searchURL = baseURL + "artist=" + artistName + "&title=" + songTitle
         Alamofire.request(.GET, searchURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! ).progress { bytes, totalBytes, totalBytesExpected in
@@ -87,11 +104,15 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
             }
             self.resultCountLabel.text = "\(self.songs.count)"
             self.resultTableView.reloadData()
+            JHProgressHUD.sharedHUD.hide()
+
+            self.sortButton.enabled = self.songs.count > 1
         }
         
         
     }
     
+    // MARK -- tableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SongCell", forIndexPath: indexPath) as! SongTableViewCell
         let song = songs[indexPath.row]
@@ -106,6 +127,61 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
+    }
+    
+    // MARK -- sortView
+    func sort(target: String, sortOrder order: String) {
+        println("target: \(target), order: \(order)")
+        
+        let asc: Bool = order == "ASC"
+        
+        switch target {
+        case "Artist Name":
+            if asc {
+                songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
+            } else {
+                songs.sort {(lhs, rhs) in return lhs.artistName > rhs.artistName}
+            }
+            break
+        case "Song Title":
+            if asc {
+                songs.sort {(lhs, rhs) in return lhs.songTitle < rhs.songTitle}
+            } else {
+                songs.sort {(lhs, rhs) in return lhs.songTitle > rhs.songTitle}
+            }
+            break
+        case "Registered Date":
+            if asc {
+                songs.sort {(lhs, rhs) in return lhs.createdAt < rhs.createdAt}
+            } else {
+                songs.sort {(lhs, rhs) in return lhs.createdAt > rhs.createdAt}
+            }
+            break
+        case "Song ID":
+            if asc {
+                songs.sort {(lhs, rhs) in return lhs.songId < rhs.songId}
+            } else {
+                songs.sort {(lhs, rhs) in return lhs.songId > rhs.songId}
+            }
+            break
+        default:
+            break
+        }
+        
+        //songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
+        resultTableView.reloadData()
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showSongInfo") {
+            let selectedCell = sender as! SongTableViewCell
+            let nextViewController: SongInfoViewController = segue.destinationViewController as! SongInfoViewController
+            nextViewController.song = songs[resultTableView.indexPathForCell(selectedCell)!.row ]
+        } else if (segue.identifier == "showSortPicker") {
+            let nextViewController: SortViewController = segue.destinationViewController as! SortViewController
+            nextViewController.delegate = self
+        }
     }
     
 }

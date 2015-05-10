@@ -19,6 +19,13 @@
 		4D5236EC1AFDCDE200D27C3C /* SearchSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */; };
 		4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236ED1AFDF74200D27C3C /* Song.swift */; };
 		4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */; };
+		4D959CE21AFE4483002ACA15 /* ExternalLib in Resources */ = {isa = PBXBuildFile; fileRef = 4D959CE11AFE4483002ACA15 /* ExternalLib */; };
+		4D959CE41AFE44EA002ACA15 /* JHProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CE31AFE44EA002ACA15 /* JHProgressHUD.swift */; };
+		4D959CE61AFF1640002ACA15 /* SongInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CE51AFF1640002ACA15 /* SongInfoViewController.swift */; };
+		4D959CE81AFF3057002ACA15 /* FavoriteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CE71AFF3057002ACA15 /* FavoriteNavigationController.swift */; };
+		4D959CEA1AFF3578002ACA15 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */; };
+		4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */; };
+		4D959CEE1AFF423B002ACA15 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CED1AFF423B002ACA15 /* SortViewController.swift */; };
 		9B7D57F11226F811FBA24797 /* Pods_KaraokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412DA1AA204BD4DE10D6C53 /* Pods_KaraokeSearch.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,6 +58,13 @@
 		4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSongViewController.swift; sourceTree = "<group>"; };
 		4D5236ED1AFDF74200D27C3C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		4D959CE11AFE4483002ACA15 /* ExternalLib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ExternalLib; path = KaraokeSearch/ExternalLib; sourceTree = "<group>"; };
+		4D959CE31AFE44EA002ACA15 /* JHProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JHProgressHUD.swift; path = ExternalLib/JHProgressHUD.swift; sourceTree = "<group>"; };
+		4D959CE51AFF1640002ACA15 /* SongInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfoViewController.swift; sourceTree = "<group>"; };
+		4D959CE71AFF3057002ACA15 /* FavoriteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteNavigationController.swift; sourceTree = "<group>"; };
+		4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavSongTableViewCell.swift; sourceTree = "<group>"; };
+		4D959CED1AFF423B002ACA15 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +98,7 @@
 		4D5236B41AFD9A9700D27C3C = {
 			isa = PBXGroup;
 			children = (
+				4D959CE11AFE4483002ACA15 /* ExternalLib */,
 				4D5236BF1AFD9A9700D27C3C /* KaraokeSearch */,
 				4D5236D81AFD9A9800D27C3C /* KaraokeSearchTests */,
 				4D5236BE1AFD9A9700D27C3C /* Products */,
@@ -104,9 +119,11 @@
 		4D5236BF1AFD9A9700D27C3C /* KaraokeSearch */ = {
 			isa = PBXGroup;
 			children = (
+				4D959CE31AFE44EA002ACA15 /* JHProgressHUD.swift */,
 				4D5236C21AFD9A9700D27C3C /* AppDelegate.swift */,
 				4D5236C71AFD9A9700D27C3C /* BaseViewController.swift */,
 				4D5236C91AFD9A9700D27C3C /* Main.storyboard */,
+				4D959CE51AFF1640002ACA15 /* SongInfoViewController.swift */,
 				4D5236CC1AFD9A9700D27C3C /* Images.xcassets */,
 				4D5236CE1AFD9A9700D27C3C /* LaunchScreen.xib */,
 				4D5236C41AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld */,
@@ -116,6 +133,10 @@
 				4D5236EB1AFDCDE200D27C3C /* SearchSongViewController.swift */,
 				4D5236ED1AFDF74200D27C3C /* Song.swift */,
 				4D5236F11AFE0A9F00D27C3C /* SongTableViewCell.swift */,
+				4D959CE71AFF3057002ACA15 /* FavoriteNavigationController.swift */,
+				4D959CE91AFF3578002ACA15 /* FavoriteViewController.swift */,
+				4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */,
+				4D959CED1AFF423B002ACA15 /* SortViewController.swift */,
 			);
 			path = KaraokeSearch;
 			sourceTree = "<group>";
@@ -206,6 +227,7 @@
 				TargetAttributes = {
 					4D5236BC1AFD9A9700D27C3C = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = SRW33UPL9Q;
 					};
 					4D5236D41AFD9A9800D27C3C = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -238,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5236CB1AFD9A9700D27C3C /* Main.storyboard in Resources */,
+				4D959CE21AFE4483002ACA15 /* ExternalLib in Resources */,
 				4D5236D01AFD9A9700D27C3C /* LaunchScreen.xib in Resources */,
 				4D5236CD1AFD9A9700D27C3C /* Images.xcassets in Resources */,
 			);
@@ -306,12 +329,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */,
+				4D959CE61AFF1640002ACA15 /* SongInfoViewController.swift in Sources */,
 				4D5236E61AFDBDE000D27C3C /* SearchNavigationController.swift in Sources */,
 				4D5236EC1AFDCDE200D27C3C /* SearchSongViewController.swift in Sources */,
+				4D959CEE1AFF423B002ACA15 /* SortViewController.swift in Sources */,
 				4D5236C81AFD9A9700D27C3C /* BaseViewController.swift in Sources */,
 				4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */,
 				4D5236E81AFDC00400D27C3C /* UIColorExtension.swift in Sources */,
+				4D959CE81AFF3057002ACA15 /* FavoriteNavigationController.swift in Sources */,
+				4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */,
+				4D959CE41AFE44EA002ACA15 /* JHProgressHUD.swift in Sources */,
 				4D5236C61AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld in Sources */,
+				4D959CEA1AFF3578002ACA15 /* FavoriteViewController.swift in Sources */,
 				4D5236C31AFD9A9700D27C3C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,9 +471,12 @@
 			baseConfigurationReference = 2BC56F21F689ABFD6C17F822 /* Pods-KaraokeSearch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KaraokeSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -453,9 +485,12 @@
 			baseConfigurationReference = 7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KaraokeSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
