@@ -13,22 +13,21 @@ protocol FilterViewControllerDelegate{
 }
 
 class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    //@IBOutlet weak var toolBar: UIToolbar!
-    //@IBOutlet weak var pickerView: UIPickerView!
-    //@IBOutlet weak var cancelButton: UIBarButtonItem!
-    //@IBOutlet weak var sortButton: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIToolbar!
     @IBOutlet weak var filterButton: UIToolbar!
     
-    var filterOptions: NSArray = ["Artist Name","Song Title"]
-    var filterStrings: NSArray = ["blank"]
+    var filterOptions: [String] = ["Artist Name","Song Title"]
+    var artistNames: [String] = [""]
+    var songTitles: [String] = [""]
     
     var delegate: FilterViewControllerDelegate! = nil
     var filterTarget: String = ""
     var filterString: String = ""
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +40,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        filterTarget = filterOptions[0] as! String
-        filterString = filterStrings[0] as! String
+        filterTarget = filterOptions[0]
+        filterString = artistNames[0]
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +72,11 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             size =  filterOptions.count
             break
         case 1:
-            size =  filterStrings.count
+            if filterTarget == filterOptions[0] {
+                size = artistNames.count
+            } else {
+                size = songTitles.count
+            }
             break
         default:
             break
@@ -82,31 +85,36 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         return size
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
-        var text : String = ""
-        switch component {
-        case 0:
-            text =  filterOptions[row] as! String
-            break
-        case 1:
-            text =  filterStrings[row] as! String
-            break
-        default:
-            break
-        }
-        
-        return text
-    }
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+//        var text : String = ""
+//        switch component {
+//        case 0:
+//            text =  filterOptions[row] as! String
+//            break
+//        case 1:
+//            text =  filterStrings[row] as! String
+//            break
+//        default:
+//            break
+//        }
+//        
+//        return text
+//    }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         var text : String = ""
         switch component {
         case 0:
-            text =  filterOptions[row] as! String
+            text =  filterOptions[row]
             break
         case 1:
-            text =  filterStrings[row] as! String
+            if filterTarget == filterOptions[0] {
+                text = artistNames[row]
+            } else {
+                text = songTitles[row]
+            }
+            
             break
         default:
             break
@@ -116,20 +124,22 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        println("row: \(row)")
-        //println("value: \(myValues[row])")
         
         switch component {
         case 0:
-            filterTarget =  filterOptions[row] as! String
+            filterTarget =  filterOptions[row]
+            self.pickerView.reloadComponent(1)
             break
         case 1:
-            filterString =  filterStrings[row] as! String
+            if filterTarget == filterOptions[0] {
+                filterString =  artistNames[row]
+            } else {
+                filterString =  songTitles[row]
+            }
             break
         default:
             break
         }
-        
     }
     
 }

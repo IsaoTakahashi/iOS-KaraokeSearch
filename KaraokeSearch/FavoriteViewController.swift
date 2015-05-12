@@ -12,7 +12,7 @@ import CoreData
 import SugarRecord
 import MaterialKit
 
-class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortViewControllerDelegate {
+class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortViewControllerDelegate, FilterViewControllerDelegate {
     
     @IBOutlet weak var favSongTableView: UITableView!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
@@ -41,11 +41,8 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
             songs.append(song)
         }
         
-        sortButton.enabled = songs.count > 2
-        filterButton.enabled = sortButton.enabled
         initializeOrder()
         favSongTableView.reloadData()
-        
     }
     
     func initializeSearchComponent() {
@@ -69,6 +66,12 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         favSongTableView.dataSource = self
     }
     
+    func refreshSearchComponent() {
+        //self.resultCountLabel.text = "\(self.songs.count)"
+        self.sortButton.enabled = self.songs.count > 1
+        self.filterButton.enabled = self.sortButton.enabled
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -81,6 +84,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         refreshButton.tintColor = UIColor.whiteColor()
         
         reloadFavSongs()
+        refreshSearchComponent()
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +105,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func clickRefresh(sender: AnyObject) {
         reloadFavSongs()
+        refreshSearchComponent()
     }
     
     
@@ -155,6 +160,22 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         favSongTableView.reloadData()
     }
     
+    // MARK -- filterView
+    func filter(target: String, filterString string: String) {
+        switch target {
+        case "Artist Name":
+            songs = songs.filter { $0.artistName == string }
+            break
+        case "Song Title":
+            songs = songs.filter { $0.songTitle == string }
+            break
+        default:
+            break
+        }
+        
+        favSongTableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showSongInfo") {
             let selectedCell = sender as! FavSongTableViewCell
@@ -171,6 +192,33 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
             
             var sortOptions: NSArray = ["Artist Name","Song Title","Registered Date","Song ID", "Favorite Date"]
             nextViewController.sortOptions = sortOptions
+        } else if (segue.identifier == "showFilterPicker") {
+            let nextViewController: FilterViewController = segue.destinationViewController as! FilterViewController
+            nextViewController.delegate = self
+            
+            var artistNames: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.artistName
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.artistName) }
+                return temp
+            })
+            var songTitles: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.songTitle
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.songTitle) }
+                return temp
+            })
+
+            nextViewController.artistNames = artistNames.sorted { $0 < $1 }
+            nextViewController.songTitles = songTitles.sorted { $0 < $1 }
         }
     }
 

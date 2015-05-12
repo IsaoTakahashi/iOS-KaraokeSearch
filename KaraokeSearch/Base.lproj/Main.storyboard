@@ -71,6 +71,9 @@
                                 <state key="normal" title="Filter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1hg-KE-1Zq" kind="presentation" identifier="showFilterPicker" modalPresentationStyle="overFullScreen" id="QbQ-US-V3z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-fB-Ni4" customClass="MKButton" customModule="MaterialKit">
                                 <rect key="frame" x="534" y="94" width="40" height="36"/>
@@ -111,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxk-82-SU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="981"/>
+            <point key="canvasLocation" x="1086" y="1367"/>
         </scene>
         <!--Search Song-->
         <scene sceneID="NJo-OP-3HL">
@@ -222,6 +225,9 @@
                                 <state key="normal" title="Filter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="1hg-KE-1Zq" kind="presentation" identifier="showFilterPicker" modalPresentationStyle="overFullScreen" id="q1E-3M-urF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -260,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBr-OS-xIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="132"/>
+            <point key="canvasLocation" x="1086" y="-359"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="KZP-bG-yU1">
@@ -320,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xq-XY-b92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="1194"/>
+            <point key="canvasLocation" x="2214" y="1038"/>
         </scene>
         <!--Sort View Controller-->
         <scene sceneID="Okt-kl-hqf">
@@ -380,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlR-ej-D7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="190"/>
+            <point key="canvasLocation" x="2214" y="134"/>
         </scene>
         <!--Song Info View Controller-->
         <scene sceneID="Fko-uB-OTs">
@@ -513,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnU-hD-Buq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2835" y="501"/>
+            <point key="canvasLocation" x="1086" y="463"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="xBD-js-uGF">
@@ -554,7 +560,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfi-xe-6TQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="133"/>
+            <point key="canvasLocation" x="285" y="-359"/>
         </scene>
         <!--Favorite Navigation Controller-->
         <scene sceneID="eq9-7G-iaw">
@@ -576,10 +582,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SyP-iV-a07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="795"/>
+            <point key="canvasLocation" x="285" y="1367"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="QbQ-US-V3z"/>
         <segue reference="UZT-b3-hDw"/>
         <segue reference="quB-7D-zGZ"/>
     </inferredMetricsTieBreakers>

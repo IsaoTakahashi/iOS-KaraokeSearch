@@ -11,7 +11,7 @@ import MaterialKit
 import QuartzCore
 import Alamofire
 
-class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, SortViewControllerDelegate  {
+class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, SortViewControllerDelegate, FilterViewControllerDelegate  {
     
     @IBOutlet weak var artistTextField: MKTextField!
     @IBOutlet weak var songTextField: MKTextField!
@@ -77,6 +77,12 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         resultTableView.dataSource = self
     }
     
+    func refreshSearchComponent() {
+        self.resultCountLabel.text = "\(self.songs.count)"
+        self.sortButton.enabled = self.songs.count > 1
+        self.filterButton.enabled = self.sortButton.enabled
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -124,13 +130,10 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
                 }
                 
             }
-            self.resultCountLabel.text = "\(self.songs.count)"
             self.initializeOrder()
             self.resultTableView.reloadData()
             JHProgressHUD.sharedHUD.hide()
-
-            self.sortButton.enabled = self.songs.count > 1
-            self.filterButton.enabled = self.sortButton.enabled
+            self.refreshSearchComponent()
         }
         
         
@@ -190,6 +193,23 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         resultTableView.reloadData()
     }
     
+    // MARK -- filterView
+    func filter(target: String, filterString string: String) {
+        switch target {
+        case "Artist Name":
+            songs = songs.filter { $0.artistName == string }
+            break
+        case "Song Title":
+            songs = songs.filter { $0.songTitle == string }
+            break
+        default:
+            break
+        }
+        
+        refreshSearchComponent()
+        resultTableView.reloadData()
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         self.view.endEditing(true)
@@ -201,6 +221,32 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         } else if (segue.identifier == "showSortPicker") {
             let nextViewController: SortViewController = segue.destinationViewController as! SortViewController
             nextViewController.delegate = self
+        } else if (segue.identifier == "showFilterPicker") {
+            let nextViewController: FilterViewController = segue.destinationViewController as! FilterViewController
+            nextViewController.delegate = self
+            
+            var artistNames: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.artistName
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.artistName) }
+                return temp
+            })
+            var songTitles: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.songTitle
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.songTitle) }
+                return temp
+            })
+            nextViewController.artistNames = artistNames.sorted { $0 < $1 }
+            nextViewController.songTitles = songTitles.sorted { $0 < $1 }
         }
     }
     
