@@ -388,6 +388,79 @@
             </objects>
             <point key="canvasLocation" x="2214" y="134"/>
         </scene>
+        <!--Bookmark Web View Controller-->
+        <scene sceneID="TUP-Gu-fye">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nTB-CL-pKr" customClass="BookmarkWebViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dve-FX-hDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IpE-za-hJ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bYt-5g-FeB">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3s-k9-n8n">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgP-Ir-080">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="&lt;" id="Jwd-pI-ffq">
+                                        <connections>
+                                            <action selector="clickBack:" destination="nTB-CL-pKr" id="3d7-ja-Yad"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="&gt;" id="Eae-TF-aGV">
+                                        <connections>
+                                            <action selector="clickForward:" destination="nTB-CL-pKr" id="0fw-gx-wfa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vnV-Ju-gMm"/>
+                                    <barButtonItem title="B!" id="dab-Lv-233">
+                                        <connections>
+                                            <action selector="clickBookmark:" destination="nTB-CL-pKr" id="0mg-eK-fTp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mui-pZ-tlx" customClass="MKLabel" customModule="MaterialKit">
+                                <rect key="frame" x="86" y="75" width="428" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I3s-k9-n8n" firstAttribute="leading" secondItem="bYt-5g-FeB" secondAttribute="leading" id="2ao-aD-vUA"/>
+                            <constraint firstItem="KgP-Ir-080" firstAttribute="centerY" secondItem="Mui-pZ-tlx" secondAttribute="centerY" id="AAB-Ny-Gib"/>
+                            <constraint firstAttribute="bottom" secondItem="I3s-k9-n8n" secondAttribute="bottom" id="B8a-Bn-Ff0"/>
+                            <constraint firstItem="Mui-pZ-tlx" firstAttribute="leading" secondItem="bYt-5g-FeB" secondAttribute="leadingMargin" constant="70" id="H4Q-31-w9z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mui-pZ-tlx" secondAttribute="trailing" constant="70" id="Lhz-tZ-4by"/>
+                            <constraint firstAttribute="trailing" secondItem="KgP-Ir-080" secondAttribute="trailing" id="ZB6-oM-eWL"/>
+                            <constraint firstItem="KgP-Ir-080" firstAttribute="top" secondItem="Dve-FX-hDJ" secondAttribute="bottom" id="dJk-Zl-oXE"/>
+                            <constraint firstItem="KgP-Ir-080" firstAttribute="leading" secondItem="bYt-5g-FeB" secondAttribute="leading" id="qe7-vC-gFm"/>
+                            <constraint firstAttribute="trailing" secondItem="I3s-k9-n8n" secondAttribute="trailing" id="tHR-aS-DVl"/>
+                            <constraint firstItem="I3s-k9-n8n" firstAttribute="top" secondItem="KgP-Ir-080" secondAttribute="bottom" id="ubb-c1-GfH"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="Jwd-pI-ffq" id="VM7-C0-4ag"/>
+                        <outlet property="bookmarkButton" destination="dab-Lv-233" id="sRA-kh-lwW"/>
+                        <outlet property="forwardButton" destination="Eae-TF-aGV" id="buo-PF-bjz"/>
+                        <outlet property="pageTitleLabel" destination="Mui-pZ-tlx" id="BVZ-zB-grb"/>
+                        <outlet property="toolBar" destination="KgP-Ir-080" id="UPD-P3-3dF"/>
+                        <outlet property="webView" destination="I3s-k9-n8n" id="Mws-c2-bNa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXs-mn-Sci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="679"/>
+        </scene>
         <!--Song Info View Controller-->
         <scene sceneID="Fko-uB-OTs">
             <objects>
@@ -400,18 +473,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="naS-n3-mfc">
-                                <rect key="frame" x="0.0" y="272" width="600" height="279"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="EwI-2U-eOl">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EwI-2U-eOl" id="jtL-Ho-4M8">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y42-FK-HT5">
                                 <rect key="frame" x="16" y="139" width="37" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -449,12 +510,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryp-uy-9rd" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="544" y="209" width="40" height="30"/>
+                                <rect key="frame" x="536" y="252" width="48" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Lyrics"/>
+                                <state key="normal" title=" Lyrics "/>
+                                <connections>
+                                    <segue destination="nTB-CL-pKr" kind="show" identifier="showLyricsWebView" id="mwJ-LF-uZn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcM-f6-NPD">
-                                <rect key="frame" x="507" y="249" width="77" height="23"/>
+                                <rect key="frame" x="507" y="312" width="77" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -468,12 +532,37 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9W-9L-iC5" customClass="MKButton" customModule="MaterialKit">
-                                <rect key="frame" x="468" y="209" width="56" height="30"/>
+                                <rect key="frame" x="462" y="252" width="64" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Youtube">
+                                <state key="normal" title=" Youtube ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="nTB-CL-pKr" kind="show" identifier="showMediaWebView" id="GzJ-wq-3Di"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UR5-fB-vJE" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="410" y="252" width="42" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="  Info  ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nTB-CL-pKr" kind="show" identifier="showInfoWebView" id="wCP-WE-Qba"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="naS-n3-mfc">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="EwI-2U-eOl">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EwI-2U-eOl" id="jtL-Ho-4M8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -483,26 +572,28 @@
                             <constraint firstItem="CYw-2U-rDG" firstAttribute="trailing" secondItem="DfM-9e-0cB" secondAttribute="trailingMargin" constant="5" id="5gj-cG-JOO"/>
                             <constraint firstItem="nwq-VE-7Um" firstAttribute="top" secondItem="xpc-ww-coQ" secondAttribute="bottom" id="6c2-Te-Px3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RUx-fo-Hc2" secondAttribute="trailing" id="95i-wj-Xvr"/>
-                            <constraint firstItem="ryp-uy-9rd" firstAttribute="leading" secondItem="w9W-9L-iC5" secondAttribute="trailing" constant="20" id="Baf-aD-6Qq"/>
+                            <constraint firstItem="ryp-uy-9rd" firstAttribute="leading" secondItem="w9W-9L-iC5" secondAttribute="trailing" constant="10" id="Baf-aD-6Qq"/>
                             <constraint firstItem="ryp-uy-9rd" firstAttribute="centerY" secondItem="w9W-9L-iC5" secondAttribute="centerY" id="BvJ-bJ-BbI"/>
                             <constraint firstItem="y42-FK-HT5" firstAttribute="top" secondItem="RUx-fo-Hc2" secondAttribute="bottom" constant="5" id="EY5-YM-32F"/>
                             <constraint firstItem="naS-n3-mfc" firstAttribute="leading" secondItem="DfM-9e-0cB" secondAttribute="leading" id="JX6-AR-wa1"/>
+                            <constraint firstItem="ryp-uy-9rd" firstAttribute="top" secondItem="CYw-2U-rDG" secondAttribute="bottom" constant="50" id="Mn6-E2-3uQ"/>
+                            <constraint firstItem="w9W-9L-iC5" firstAttribute="leading" secondItem="UR5-fB-vJE" secondAttribute="trailing" constant="10" id="P6n-lj-evW"/>
                             <constraint firstItem="tnY-eS-2L1" firstAttribute="leading" secondItem="DfM-9e-0cB" secondAttribute="leadingMargin" id="QLH-hi-jDr"/>
                             <constraint firstItem="xpc-ww-coQ" firstAttribute="leading" secondItem="tnY-eS-2L1" secondAttribute="leading" id="RUI-qg-QSC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Juy-xK-moq" secondAttribute="trailing" id="TK4-RI-oUa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bcM-f6-NPD" secondAttribute="trailing" id="bx3-Al-qS9"/>
                             <constraint firstItem="xpc-ww-coQ" firstAttribute="top" secondItem="Juy-xK-moq" secondAttribute="bottom" constant="5" id="c6H-k3-sSk"/>
                             <constraint firstItem="xpc-ww-coQ" firstAttribute="leading" secondItem="y42-FK-HT5" secondAttribute="leading" id="dEL-Yc-RL6"/>
-                            <constraint firstItem="nwq-VE-7Um" firstAttribute="bottom" secondItem="ryp-uy-9rd" secondAttribute="bottom" id="fWq-5F-nW7"/>
                             <constraint firstItem="RUx-fo-Hc2" firstAttribute="leading" secondItem="DfM-9e-0cB" secondAttribute="leadingMargin" constant="20" id="iLL-8K-SBh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="naS-n3-mfc" secondAttribute="trailing" constant="-16" id="iuI-XQ-WEf"/>
                             <constraint firstItem="Juy-xK-moq" firstAttribute="top" secondItem="y42-FK-HT5" secondAttribute="bottom" id="jgG-1Z-cew"/>
                             <constraint firstItem="TtM-eL-lUF" firstAttribute="top" secondItem="naS-n3-mfc" secondAttribute="bottom" id="na7-Lj-Z9f"/>
                             <constraint firstItem="tnY-eS-2L1" firstAttribute="top" secondItem="ani-bz-KoP" secondAttribute="bottom" constant="20" id="oo0-2z-cTh"/>
-                            <constraint firstItem="bcM-f6-NPD" firstAttribute="top" secondItem="nwq-VE-7Um" secondAttribute="bottom" constant="10" id="sxI-wW-sjd"/>
+                            <constraint firstItem="bcM-f6-NPD" firstAttribute="top" secondItem="w9W-9L-iC5" secondAttribute="bottom" constant="30" id="roE-oJ-F17"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ryp-uy-9rd" secondAttribute="trailing" id="tPi-zr-GgT"/>
                             <constraint firstItem="Juy-xK-moq" firstAttribute="centerY" secondItem="CYw-2U-rDG" secondAttribute="centerY" id="uM0-xl-jsA"/>
                             <constraint firstItem="nwq-VE-7Um" firstAttribute="leading" secondItem="RUx-fo-Hc2" secondAttribute="leading" id="uuo-cD-v8n"/>
+                            <constraint firstItem="UR5-fB-vJE" firstAttribute="centerY" secondItem="w9W-9L-iC5" secondAttribute="centerY" id="xdL-ff-daf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -510,6 +601,8 @@
                         <outlet property="artistNameLabel" destination="RUx-fo-Hc2" id="K9B-tw-8Ak"/>
                         <outlet property="descLabel" destination="xpc-ww-coQ" id="IqB-WU-S38"/>
                         <outlet property="descriptionLabel" destination="nwq-VE-7Um" id="ObD-Ee-4VO"/>
+                        <outlet property="historyTableView" destination="naS-n3-mfc" id="TkO-U1-1J8"/>
+                        <outlet property="infoButton" destination="UR5-fB-vJE" id="06O-a8-G4O"/>
                         <outlet property="lyricsButton" destination="ryp-uy-9rd" id="zX1-Zf-z8m"/>
                         <outlet property="songFavButton" destination="CYw-2U-rDG" id="hrh-dB-VLr"/>
                         <outlet property="songLabel" destination="y42-FK-HT5" id="86E-Aw-jvL"/>
@@ -589,5 +682,6 @@
         <segue reference="QbQ-US-V3z"/>
         <segue reference="UZT-b3-hDw"/>
         <segue reference="quB-7D-zGZ"/>
+        <segue reference="wCP-WE-Qba"/>
     </inferredMetricsTieBreakers>
 </document>

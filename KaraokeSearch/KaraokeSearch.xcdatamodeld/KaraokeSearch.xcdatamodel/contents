@@ -6,11 +6,13 @@
         <attribute name="favoredAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="favoredFlg" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lyricsURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mediaURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="registeredAt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="songId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="songTitle" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FavoredSong" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="FavoredSong" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>
