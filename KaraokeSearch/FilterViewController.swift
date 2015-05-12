@@ -1,5 +1,5 @@
 //
-//  SortViewController.swift
+//  FilterViewController.swift
 //  KaraokeSearch
 //
 //  Created by 高橋 勲 on 2015/05/10.
@@ -8,23 +8,26 @@
 
 import UIKit
 
-protocol SortViewControllerDelegate{
-    func sort(target: String, sortOrder order: String)
+protocol FilterViewControllerDelegate{
+    func filter(target: String, filterString string: String)
 }
 
-class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    @IBOutlet weak var sortButton: UIToolbar!
+    @IBOutlet weak var cancelButton: UIToolbar!
+    @IBOutlet weak var filterButton: UIToolbar!
     
-    var sortOptions: NSArray = ["Artist Name","Song Title","Registered Date","Song ID"]
-    var sortOrderOptions: NSArray = ["ASC","DESC"]
+    var filterOptions: [String] = ["Artist Name","Song Title"]
+    var artistNames: [String] = [""]
+    var songTitles: [String] = [""]
     
-    var delegate: SortViewControllerDelegate! = nil
-    var sortTarget: String = ""
-    var sortOrder: String = ""
+    var delegate: FilterViewControllerDelegate! = nil
+    var filterTarget: String = ""
+    var filterString: String = ""
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +40,8 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        sortTarget = sortOptions[0] as! String
-        sortOrder = sortOrderOptions[0] as! String
+        filterTarget = filterOptions[0]
+        filterString = artistNames[0]
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,14 +49,13 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func clickCancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func clickSort(sender: AnyObject) {
+    @IBAction func clickFilter(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        self.delegate.sort(sortTarget, sortOrder: sortOrder)
+        self.delegate.filter(filterTarget, filterString: filterString)
     }
     
     // MARK -- pickerView
@@ -67,10 +69,14 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         switch component {
         case 0:
-            size =  sortOptions.count
+            size =  filterOptions.count
             break
         case 1:
-            size =  sortOrderOptions.count
+            if filterTarget == filterOptions[0] {
+                size = artistNames.count
+            } else {
+                size = songTitles.count
+            }
             break
         default:
             break
@@ -79,31 +85,36 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return size
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
-        var text : String = ""
-        switch component {
-        case 0:
-            text =  sortOptions[row] as! String
-            break
-        case 1:
-            text =  sortOrderOptions[row] as! String
-            break
-        default:
-            break
-        }
-        
-        return text
-    }
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+//        var text : String = ""
+//        switch component {
+//        case 0:
+//            text =  filterOptions[row] as! String
+//            break
+//        case 1:
+//            text =  filterStrings[row] as! String
+//            break
+//        default:
+//            break
+//        }
+//        
+//        return text
+//    }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         var text : String = ""
         switch component {
         case 0:
-            text =  sortOptions[row] as! String
+            text =  filterOptions[row]
             break
         case 1:
-            text =  sortOrderOptions[row] as! String
+            if filterTarget == filterOptions[0] {
+                text = artistNames[row]
+            } else {
+                text = songTitles[row]
+            }
+            
             break
         default:
             break
@@ -113,20 +124,22 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        println("row: \(row)")
-        //println("value: \(myValues[row])")
         
         switch component {
         case 0:
-            sortTarget =  sortOptions[row] as! String
+            filterTarget =  filterOptions[row]
+            self.pickerView.reloadComponent(1)
             break
         case 1:
-            sortOrder =  sortOrderOptions[row] as! String
+            if filterTarget == filterOptions[0] {
+                filterString =  artistNames[row]
+            } else {
+                filterString =  songTitles[row]
+            }
             break
         default:
             break
         }
-        
     }
-
+    
 }

@@ -11,26 +11,39 @@ import MaterialKit
 import QuartzCore
 import Alamofire
 
-class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortViewControllerDelegate  {
+class SearchSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, SortViewControllerDelegate, FilterViewControllerDelegate  {
     
     @IBOutlet weak var artistTextField: MKTextField!
     @IBOutlet weak var songTextField: MKTextField!
     @IBOutlet weak var searchButton: MKButton!
     @IBOutlet weak var resultCountLabel: MKLabel!
     @IBOutlet weak var sortButton: MKButton!
+    @IBOutlet weak var filterButton: MKButton!
     
     @IBOutlet weak var resultTableView: UITableView!
     
     var songs = [Song]()
+    
+    func initializeOrder() {
+        songs.sort {(lhs, rhs) in
+            if lhs.artistName != rhs.artistName {
+                return lhs.artistName < rhs.artistName
+            } else {
+                return lhs.songTitle < rhs.songTitle
+            }
+        }
+    }
 
     func initializeSearchComponent() {
         artistTextField.textColor = UIColor.TextFieldTextColor()
         artistTextField.layer.borderColor = UIColor.MainLightColor().CGColor
         artistTextField.attributedPlaceholder = NSAttributedString(string: "Artist Name", attributes: [NSForegroundColorAttributeName : UIColor.MainLightColor()])
+        artistTextField.delegate = self
 
         songTextField.textColor = UIColor.TextFieldTextColor()
         songTextField.layer.borderColor = UIColor.MainLightColor().CGColor
         songTextField.attributedPlaceholder = NSAttributedString(string: "Song Title", attributes: [NSForegroundColorAttributeName : UIColor.MainLightColor()])
+        songTextField.delegate = self
         
         searchButton.maskEnabled = false
         searchButton.ripplePercent = 0.5
@@ -50,11 +63,24 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         sortButton.rippleLocation = .Center
         sortButton.tintColor = UIColor.ButtonBKColor()
         sortButton.enabled = false
+        
+        filterButton.maskEnabled = false
+        filterButton.ripplePercent = 0.5
+        filterButton.backgroundAniEnabled = false
+        filterButton.rippleLocation = .Center
+        filterButton.tintColor = UIColor.ButtonBKColor()
+        filterButton.enabled = false
     }
     
     func initializeResultTableComponent() {
         resultTableView.delegate = self
         resultTableView.dataSource = self
+    }
+    
+    func refreshSearchComponent() {
+        self.resultCountLabel.text = "\(self.songs.count)"
+        self.sortButton.enabled = self.songs.count > 1
+        self.filterButton.enabled = self.sortButton.enabled
     }
     
     override func viewDidLoad() {
@@ -79,6 +105,9 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         let artistName : String! = artistTextField.attributedText?.string
         let songTitle : String! = songTextField.attributedText?.string
         
+        artistTextField.resignFirstResponder()
+        songTextField.resignFirstResponder()
+        
         if (artistName.isEmpty && songTitle.isEmpty) {
             println("please input either artistName or songTitle")
             return
@@ -88,8 +117,7 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         songs.removeAll(keepCapacity: false)
         JHProgressHUD.sharedHUD.showInView(self.view, withHeader: "", andFooter: "Searching...")
         
-        artistTextField.resignFirstResponder()
-        songTextField.resignFirstResponder()
+        
         
         let searchURL = baseURL + "artist=" + artistName + "&title=" + songTitle
         Alamofire.request(.GET, searchURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! ).progress { bytes, totalBytes, totalBytesExpected in
@@ -102,14 +130,19 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
                 }
                 
             }
-            self.resultCountLabel.text = "\(self.songs.count)"
+            self.initializeOrder()
             self.resultTableView.reloadData()
             JHProgressHUD.sharedHUD.hide()
-
-            self.sortButton.enabled = self.songs.count > 1
+            self.refreshSearchComponent()
         }
         
         
+    }
+    
+    // MARK -- textField
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     // MARK -- tableView
@@ -133,47 +166,54 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
     func sort(target: String, sortOrder order: String) {
         println("target: \(target), order: \(order)")
         
-        let asc: Bool = order == "ASC"
+        initializeOrder()
         
         switch target {
         case "Artist Name":
-            if asc {
-                songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
-            } else {
-                songs.sort {(lhs, rhs) in return lhs.artistName > rhs.artistName}
-            }
+            songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
             break
         case "Song Title":
-            if asc {
-                songs.sort {(lhs, rhs) in return lhs.songTitle < rhs.songTitle}
-            } else {
-                songs.sort {(lhs, rhs) in return lhs.songTitle > rhs.songTitle}
-            }
+            songs.sort {(lhs, rhs) in return lhs.songTitle < rhs.songTitle}
             break
         case "Registered Date":
-            if asc {
-                songs.sort {(lhs, rhs) in return lhs.createdAt < rhs.createdAt}
-            } else {
-                songs.sort {(lhs, rhs) in return lhs.createdAt > rhs.createdAt}
-            }
+            songs.sort {(lhs, rhs) in return lhs.createdAt < rhs.createdAt}
             break
         case "Song ID":
-            if asc {
-                songs.sort {(lhs, rhs) in return lhs.songId < rhs.songId}
-            } else {
-                songs.sort {(lhs, rhs) in return lhs.songId > rhs.songId}
-            }
+            songs.sort {(lhs, rhs) in return lhs.songId < rhs.songId}
             break
         default:
             break
         }
         
-        //songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
+        let asc: Bool = order == "ASC"
+        if !asc {
+            songs = songs.reverse()
+        }
+        
+        resultTableView.reloadData()
+    }
+    
+    // MARK -- filterView
+    func filter(target: String, filterString string: String) {
+        switch target {
+        case "Artist Name":
+            songs = songs.filter { $0.artistName == string }
+            break
+        case "Song Title":
+            songs = songs.filter { $0.songTitle == string }
+            break
+        default:
+            break
+        }
+        
+        refreshSearchComponent()
         resultTableView.reloadData()
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        self.view.endEditing(true)
+        
         if (segue.identifier == "showSongInfo") {
             let selectedCell = sender as! SongTableViewCell
             let nextViewController: SongInfoViewController = segue.destinationViewController as! SongInfoViewController
@@ -181,6 +221,32 @@ class SearchSongViewController: UIViewController, UITableViewDataSource, UITable
         } else if (segue.identifier == "showSortPicker") {
             let nextViewController: SortViewController = segue.destinationViewController as! SortViewController
             nextViewController.delegate = self
+        } else if (segue.identifier == "showFilterPicker") {
+            let nextViewController: FilterViewController = segue.destinationViewController as! FilterViewController
+            nextViewController.delegate = self
+            
+            var artistNames: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.artistName
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.artistName) }
+                return temp
+            })
+            var songTitles: [String] = songs.reduce([String](), combine: {
+                var temp = $0
+                let artistName = $1.songTitle
+                let count:Int = temp.filter({
+                    $0 == artistName
+                }).count
+                
+                if count==0 { temp.append($1.songTitle) }
+                return temp
+            })
+            nextViewController.artistNames = artistNames.sorted { $0 < $1 }
+            nextViewController.songTitles = songTitles.sorted { $0 < $1 }
         }
     }
     

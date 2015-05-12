@@ -8,17 +8,17 @@
         <!--Favorites-->
         <scene sceneID="F0K-z9-psF">
             <objects>
-                <viewController id="bV8-l8-NG9" customClass="FavoriteViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bV8-l8-NG9" customClass="FavoriteViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wvo-ty-xxb"/>
                         <viewControllerLayoutGuide type="bottom" id="Tom-gR-Bpg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="exk-ZU-AOr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="urT-ak-nkN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <rect key="frame" x="0.0" y="150" width="600" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FavSongCell" rowHeight="70" id="HkZ-3R-4G6" customClass="FavSongTableViewCell" customModule="KaraokeSearch" customModuleProvider="target">
@@ -65,13 +65,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfh-mm-pts" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="26" y="94" width="44" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1hg-KE-1Zq" kind="presentation" identifier="showFilterPicker" modalPresentationStyle="overFullScreen" id="QbQ-US-V3z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-fB-Ni4" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="534" y="94" width="40" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="↑↓">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LBL-ax-YRw" kind="presentation" identifier="showSortPicker" modalPresentationStyle="overFullScreen" id="UZT-b3-hDw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="urT-ak-nkN" firstAttribute="top" secondItem="exk-ZU-AOr" secondAttribute="topMargin" id="Gcp-Qn-Ruw"/>
+                            <constraint firstItem="ABx-fB-Ni4" firstAttribute="centerY" secondItem="Cfh-mm-pts" secondAttribute="centerY" id="BSL-Sm-BCU"/>
                             <constraint firstAttribute="trailing" secondItem="urT-ak-nkN" secondAttribute="trailing" id="T0P-yo-MwW"/>
                             <constraint firstItem="urT-ak-nkN" firstAttribute="bottom" secondItem="exk-ZU-AOr" secondAttribute="bottomMargin" constant="-50" id="YLE-Z1-0zH"/>
+                            <constraint firstItem="Cfh-mm-pts" firstAttribute="top" secondItem="Wvo-ty-xxb" secondAttribute="bottom" constant="30" id="ZBW-20-NHl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ABx-fB-Ni4" secondAttribute="trailing" constant="10" id="aey-wN-wUq"/>
+                            <constraint firstItem="Cfh-mm-pts" firstAttribute="leading" secondItem="exk-ZU-AOr" secondAttribute="leadingMargin" constant="10" id="cuv-da-vPO"/>
                             <constraint firstItem="urT-ak-nkN" firstAttribute="leading" secondItem="exk-ZU-AOr" secondAttribute="leading" id="o4N-Er-ffJ"/>
+                            <constraint firstItem="urT-ak-nkN" firstAttribute="top" secondItem="ABx-fB-Ni4" secondAttribute="bottom" constant="20" id="xQ4-IU-jhV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="d3G-5e-aGY">
@@ -83,12 +107,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="favSongTableView" destination="urT-ak-nkN" id="HPR-0I-b0f"/>
+                        <outlet property="filterButton" destination="Cfh-mm-pts" id="wvE-W2-94J"/>
                         <outlet property="refreshButton" destination="XVr-8z-gCZ" id="lVM-tv-lzC"/>
+                        <outlet property="sortButton" destination="ABx-fB-Ni4" id="k1P-8h-yb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gxk-82-SU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="981"/>
+            <point key="canvasLocation" x="1086" y="1367"/>
         </scene>
         <!--Search Song-->
         <scene sceneID="NJo-OP-3HL">
@@ -193,6 +219,16 @@
                                     <segue destination="LBL-ax-YRw" kind="presentation" identifier="showSortPicker" modalPresentationStyle="overFullScreen" id="Qvn-mC-EcG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-fA-4bt" customClass="MKButton" customModule="MaterialKit">
+                                <rect key="frame" x="26" y="169" width="44" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1hg-KE-1Zq" kind="presentation" identifier="showFilterPicker" modalPresentationStyle="overFullScreen" id="q1E-3M-urF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,12 +248,15 @@
                             <constraint firstItem="mmW-pM-jme" firstAttribute="centerY" secondItem="d2H-pu-4mH" secondAttribute="centerY" id="biX-Hq-76l"/>
                             <constraint firstAttribute="centerX" secondItem="Wre-Zk-0kA" secondAttribute="centerX" id="eIa-KD-EDf"/>
                             <constraint firstItem="frS-V7-QYk" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="10" id="fm6-kR-7LY"/>
+                            <constraint firstItem="frS-V7-QYk" firstAttribute="leading" secondItem="eKB-fA-4bt" secondAttribute="leading" id="icO-RZ-vc6"/>
+                            <constraint firstItem="mmW-pM-jme" firstAttribute="centerY" secondItem="eKB-fA-4bt" secondAttribute="centerY" id="mVW-Rh-KrR"/>
                             <constraint firstItem="ahm-XB-gzs" firstAttribute="leading" secondItem="gC6-y4-0HD" secondAttribute="leadingMargin" constant="10" id="rje-gV-GhS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search Song" id="pmL-46-rss"/>
                     <connections>
                         <outlet property="artistTextField" destination="ahm-XB-gzs" id="Rhb-R2-ZRX"/>
+                        <outlet property="filterButton" destination="eKB-fA-4bt" id="lDt-KV-z0X"/>
                         <outlet property="resultCountLabel" destination="VCN-8s-aIi" id="TgO-0s-Jtq"/>
                         <outlet property="resultTableView" destination="Wre-Zk-0kA" id="WR1-dn-09F"/>
                         <outlet property="searchButton" destination="d2H-pu-4mH" id="eY0-xI-ELT"/>
@@ -227,7 +266,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBr-OS-xIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1097" y="132"/>
+            <point key="canvasLocation" x="1086" y="-359"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="KZP-bG-yU1">
+            <objects>
+                <viewController id="1hg-KE-1Zq" customClass="FilterViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WY8-8j-yL2"/>
+                        <viewControllerLayoutGuide type="bottom" id="kIO-Aq-Jb2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8nQ-aX-BVI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p96-PS-E24">
+                                <rect key="frame" x="0.0" y="444" width="600" height="162"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="RFo-HA-4C4"/>
+                                </constraints>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9OI-Ec-ElC">
+                                <rect key="frame" x="0.0" y="410" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Nj-L9-z2X"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Cancel" id="kN0-ts-beL">
+                                        <connections>
+                                            <action selector="clickCancel:" destination="1hg-KE-1Zq" id="nf6-jz-xl5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p7I-m7-EYT"/>
+                                    <barButtonItem title="Filter" id="del-jE-Ytd">
+                                        <connections>
+                                            <action selector="clickFilter:" destination="1hg-KE-1Zq" id="mPb-Pp-N4m"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p96-PS-E24" firstAttribute="top" secondItem="9OI-Ec-ElC" secondAttribute="bottom" id="1ws-Xq-gmx"/>
+                            <constraint firstAttribute="trailing" secondItem="p96-PS-E24" secondAttribute="trailing" id="4gY-mQ-cUE"/>
+                            <constraint firstItem="9OI-Ec-ElC" firstAttribute="leading" secondItem="8nQ-aX-BVI" secondAttribute="leadingMargin" constant="-16" id="Hro-aj-14m"/>
+                            <constraint firstItem="p96-PS-E24" firstAttribute="leading" secondItem="8nQ-aX-BVI" secondAttribute="leading" id="TAO-0o-kQu"/>
+                            <constraint firstItem="kIO-Aq-Jb2" firstAttribute="top" secondItem="p96-PS-E24" secondAttribute="bottom" id="Yes-M3-Ced"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9OI-Ec-ElC" secondAttribute="trailing" constant="-16" id="jpP-Uu-rzW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="9OI-Ec-ElC" id="gEu-oW-QDW"/>
+                        <outlet property="filterButton" destination="9OI-Ec-ElC" id="Yuy-Ot-L1L"/>
+                        <outlet property="pickerView" destination="p96-PS-E24" id="LF0-zx-l75"/>
+                        <outlet property="toolBar" destination="9OI-Ec-ElC" id="gxY-eY-X2l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xq-XY-b92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="1038"/>
         </scene>
         <!--Sort View Controller-->
         <scene sceneID="Okt-kl-hqf">
@@ -287,12 +386,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlR-ej-D7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="-570"/>
+            <point key="canvasLocation" x="2214" y="134"/>
         </scene>
         <!--Song Info View Controller-->
         <scene sceneID="Fko-uB-OTs">
             <objects>
-                <viewController id="IQ8-z4-SRD" customClass="SongInfoViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="IQ8-z4-SRD" customClass="SongInfoViewController" customModule="KaraokeSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ani-bz-KoP"/>
                         <viewControllerLayoutGuide type="bottom" id="TtM-eL-lUF"/>
@@ -304,6 +403,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="naS-n3-mfc">
                                 <rect key="frame" x="0.0" y="272" width="600" height="279"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" id="EwI-2U-eOl">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EwI-2U-eOl" id="jtL-Ho-4M8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y42-FK-HT5">
                                 <rect key="frame" x="16" y="139" width="37" height="21"/>
@@ -412,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnU-hD-Buq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="133"/>
+            <point key="canvasLocation" x="1086" y="463"/>
         </scene>
         <!--Base View Controller-->
         <scene sceneID="xBD-js-uGF">
@@ -453,7 +560,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfi-xe-6TQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="133"/>
+            <point key="canvasLocation" x="285" y="-359"/>
         </scene>
         <!--Favorite Navigation Controller-->
         <scene sceneID="eq9-7G-iaw">
@@ -475,10 +582,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SyP-iV-a07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="795"/>
+            <point key="canvasLocation" x="285" y="1367"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3tT-0J-wsX"/>
+        <segue reference="QbQ-US-V3z"/>
+        <segue reference="UZT-b3-hDw"/>
+        <segue reference="quB-7D-zGZ"/>
     </inferredMetricsTieBreakers>
 </document>

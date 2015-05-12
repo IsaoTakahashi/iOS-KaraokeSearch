@@ -20,9 +20,9 @@ iOS client application for Karaoke Search.
   + [x] Song Title ASC/DESC
   + [x] Registered Date ASC/DSC
   + [x] Song ID ASC/DESC
-- [ ] Squeeze Result of Search
-  + [ ] for Artist Name
-  + [ ] for Song Title
+- [x] Filter Result of Search
+  + [x] for Artist Name
+  + [x] for Song Title
   + [ ] for Registered Date
 
 ### Personal Utility
