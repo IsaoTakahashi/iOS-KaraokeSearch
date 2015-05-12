@@ -35,6 +35,7 @@ iOS client application for Karaoke Search.
     * [ ] Count of Singing
     * [ ] When/Where Singing
   + [ ] Display Timeline of History
-  + [ ] Search Song via Youtube
-  + [ ] Search Lyrics via Google
+  + [x] Show Karaoke Info for the Song
+  + [x] Search Song via Youtube
+  + [x] Search Lyrics via Google
 - [ ] Create Set List

@@ -19,5 +19,7 @@ class FavoredSong: NSManagedObject {
     @NSManaged var registeredAt: String
     @NSManaged var favoredAt: NSDate
     @NSManaged var favoredFlg: NSNumber
+    @NSManaged var mediaURL: String
+    @NSManaged var lyricsURL: String
 
 }

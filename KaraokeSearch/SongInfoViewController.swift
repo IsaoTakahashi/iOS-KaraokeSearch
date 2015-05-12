@@ -10,7 +10,7 @@ import UIKit
 import MaterialKit
 import CoreData
 
-class SongInfoViewController: UIViewController {
+class SongInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BookmarkWebViewControllerDelegate {
     
     var song : Song? = nil
     var favSong : FavoredSong? = nil
@@ -25,9 +25,11 @@ class SongInfoViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: MKLabel!
     
     @IBOutlet weak var songFavButton: MKButton!
+    @IBOutlet weak var infoButton: MKButton!
     @IBOutlet weak var youtubeButton: MKButton!
     @IBOutlet weak var lyricsButton: MKButton!
     
+    @IBOutlet weak var historyTableView: UITableView!
     
     func initializeSubjectLabel() {
         artistLabel.textColor = UIColor.StaticLabelTextColor()
@@ -68,9 +70,48 @@ class SongInfoViewController: UIViewController {
         setFavButton(favSong != nil)
     }
     
+    func setButtonStyle(button: MKButton!, isActive: Bool) {
+        button.maskEnabled = false
+        button.ripplePercent = 0.5
+        button.backgroundAniEnabled = false
+        button.rippleLocation = .Center
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.ButtonBKColor().CGColor
+        
+        if isActive {
+            button.backgroundColor = UIColor.ButtonBKColor()
+            button.tintColor = UIColor.ButtonTextColor()
+        } else {
+            button.backgroundColor = UIColor.ButtonTextColor()
+            button.tintColor = UIColor.ButtonBKColor()
+        }
+        
+    }
+    
+    func refreshSubInfoButton() {
+        if favSong != nil {
+            println(favSong!.description)
+            setButtonStyle(youtubeButton, isActive: !favSong!.mediaURL.isEmpty)
+            setButtonStyle(lyricsButton, isActive: !favSong!.lyricsURL.isEmpty)
+        } else {
+            setButtonStyle(youtubeButton, isActive: false)
+            setButtonStyle(lyricsButton, isActive: false)
+        }
+        
+        setButtonStyle(infoButton, isActive: true)
+    }
+    
     func initializeSubInfo() {
-        youtubeButton.enabled = false
-        lyricsButton.enabled = false
+        youtubeButton.enabled = true
+        lyricsButton.enabled = true
+        infoButton.enabled = true
+        
+        refreshSubInfoButton()
+    }
+    
+    func initializeHistoryTable() {
+        historyTableView.delegate = self
+        historyTableView.dataSource = self
     }
     
     override func viewDidLoad() {
@@ -82,6 +123,9 @@ class SongInfoViewController: UIViewController {
         initializeInfoLabel()
         initializeFavInfo()
         initializeSubInfo()
+        initializeHistoryTable()
+        
+        historyTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +144,8 @@ class SongInfoViewController: UIViewController {
         favoriteSong.registeredAt = song.createdAt
         favoriteSong.favoredAt = NSDate()
         favoriteSong.favoredFlg = 1
+        favoriteSong.mediaURL = ""
+        favoriteSong.lyricsURL = ""
         
         let saved: Bool = favoriteSong.save()
         
@@ -122,15 +168,98 @@ class SongInfoViewController: UIViewController {
         isFavored = !isFavored
         setFavButton(isFavored)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK -- tableView
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        var cellText: String = ""
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.textColor = UIColor.grayColor()
+            cellText = "History (UnderConstruction)"
+            break
+        case 1:
+            cell.textLabel?.textColor = UIColor.lightGrayColor()
+            cellText = "Sung at 2015-04-01 18:00:00"
+            break
+        case 2:
+            cell.textLabel?.textColor = UIColor.lightGrayColor()
+            cellText = "Faved at 2015-01-23 00:00:00"
+        default:
+            break
+        }
+        cell.textLabel?.text = cellText
+        return cell
     }
-    */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return false
+    }
+    
+    // MARK -- bookmarkWebView
+    func bookmark(urlString: String, service: String) {
+        
+        favSong?.beginWriting()
+        
+        switch service {
+        case "media":
+            favSong?.mediaURL = urlString
+            break
+        case "lyrics":
+            favSong?.lyricsURL = urlString
+            break
+        default:
+            break
+        }
+        
+        favSong?.endWriting()
+        favSong?.save()
+        
+        refreshSubInfoButton()
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showInfoWebView") {
+            let nextViewController: BookmarkWebViewController = segue.destinationViewController as! BookmarkWebViewController
+            nextViewController.delegate = self
+            //nextViewController.favSong = favSong
+            
+            nextViewController.urlString = "http://joysound.com/ex/search/song.htm?gakkyokuId=\(song!.songId)"
+            nextViewController.song = song
+            nextViewController.service = "info"
+            nextViewController.navigationItem.title = "Info"
+        } else if (segue.identifier == "showMediaWebView") {
+            let nextViewController: BookmarkWebViewController = segue.destinationViewController as! BookmarkWebViewController
+            nextViewController.delegate = self
+            if favSong != nil {
+                nextViewController.urlString = favSong!.mediaURL
+                nextViewController.favSong = favSong
+            } else {
+                nextViewController.urlString = ""
+            }
+            
+            nextViewController.song = song
+            nextViewController.service = "media"
+            nextViewController.navigationItem.title = "Media"
+        } else if (segue.identifier == "showLyricsWebView") {
+            let nextViewController: BookmarkWebViewController = segue.destinationViewController as! BookmarkWebViewController
+            nextViewController.delegate = self
+            if favSong != nil {
+                nextViewController.urlString = favSong!.lyricsURL
+                nextViewController.favSong = favSong
+            } else {
+                nextViewController.urlString = ""
+            }
+            nextViewController.song = song
+            nextViewController.service = "lyrics"
+            nextViewController.navigationItem.title = "Lyrics"
+        }
+
+    }
 }

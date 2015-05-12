@@ -72,6 +72,15 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         self.filterButton.enabled = self.sortButton.enabled
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if songs.count > 0 {
+            reloadFavSongs()
+            refreshSearchComponent()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,7 +117,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         refreshSearchComponent()
     }
     
-    
+    // MARK -- tableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FavSongCell", forIndexPath: indexPath) as! FavSongTableViewCell
         let song = songs[indexPath.row]
