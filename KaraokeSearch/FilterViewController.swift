@@ -1,5 +1,5 @@
 //
-//  SortViewController.swift
+//  FilterViewController.swift
 //  KaraokeSearch
 //
 //  Created by 高橋 勲 on 2015/05/10.
@@ -8,23 +8,27 @@
 
 import UIKit
 
-protocol SortViewControllerDelegate{
-    func sort(target: String, sortOrder order: String)
+protocol FilterViewControllerDelegate{
+    func filter(target: String, filterString string: String)
 }
 
-class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //@IBOutlet weak var toolBar: UIToolbar!
+    //@IBOutlet weak var pickerView: UIPickerView!
+    //@IBOutlet weak var cancelButton: UIBarButtonItem!
+    //@IBOutlet weak var sortButton: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-    @IBOutlet weak var sortButton: UIToolbar!
+    @IBOutlet weak var cancelButton: UIToolbar!
+    @IBOutlet weak var filterButton: UIToolbar!
     
-    var sortOptions: NSArray = ["Artist Name","Song Title","Registered Date","Song ID"]
-    var sortOrderOptions: NSArray = ["ASC","DESC"]
+    var filterOptions: NSArray = ["Artist Name","Song Title"]
+    var filterStrings: NSArray = ["blank"]
     
-    var delegate: SortViewControllerDelegate! = nil
-    var sortTarget: String = ""
-    var sortOrder: String = ""
+    var delegate: FilterViewControllerDelegate! = nil
+    var filterTarget: String = ""
+    var filterString: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +41,8 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        sortTarget = sortOptions[0] as! String
-        sortOrder = sortOrderOptions[0] as! String
+        filterTarget = filterOptions[0] as! String
+        filterString = filterStrings[0] as! String
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,14 +50,13 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func clickCancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func clickSort(sender: AnyObject) {
+    @IBAction func clickFilter(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        self.delegate.sort(sortTarget, sortOrder: sortOrder)
+        self.delegate.filter(filterTarget, filterString: filterString)
     }
     
     // MARK -- pickerView
@@ -67,10 +70,10 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         switch component {
         case 0:
-            size =  sortOptions.count
+            size =  filterOptions.count
             break
         case 1:
-            size =  sortOrderOptions.count
+            size =  filterStrings.count
             break
         default:
             break
@@ -83,10 +86,10 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var text : String = ""
         switch component {
         case 0:
-            text =  sortOptions[row] as! String
+            text =  filterOptions[row] as! String
             break
         case 1:
-            text =  sortOrderOptions[row] as! String
+            text =  filterStrings[row] as! String
             break
         default:
             break
@@ -100,10 +103,10 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         var text : String = ""
         switch component {
         case 0:
-            text =  sortOptions[row] as! String
+            text =  filterOptions[row] as! String
             break
         case 1:
-            text =  sortOrderOptions[row] as! String
+            text =  filterStrings[row] as! String
             break
         default:
             break
@@ -118,15 +121,15 @@ class SortViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         switch component {
         case 0:
-            sortTarget =  sortOptions[row] as! String
+            filterTarget =  filterOptions[row] as! String
             break
         case 1:
-            sortOrder =  sortOrderOptions[row] as! String
+            filterString =  filterStrings[row] as! String
             break
         default:
             break
         }
         
     }
-
+    
 }

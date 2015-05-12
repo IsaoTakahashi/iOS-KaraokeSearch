@@ -10,34 +10,73 @@ import UIKit
 import Foundation
 import CoreData
 import SugarRecord
+import MaterialKit
 
-class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SortViewControllerDelegate {
     
     @IBOutlet weak var favSongTableView: UITableView!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var filterButton: MKButton!
+    @IBOutlet weak var sortButton: MKButton!
     
     var songs = [FavoredSong]()
+    
+    func initializeOrder() {
+        songs.sort {(lhs, rhs) in
+            if lhs.artistName != rhs.artistName {
+                return lhs.artistName < rhs.artistName
+            } else {
+                return lhs.songTitle < lhs.songTitle
+            }
+        }
+    }
     
     func reloadFavSongs() {
         songs.removeAll(keepCapacity: false)
         
-        let results: SugarRecordResults = FavoredSong.all().sorted(by: "favoredAt", ascending: true).find()
+        let results: SugarRecordResults = FavoredSong.all().sorted(by: "artistName", ascending: true).find()
         
         for result: AnyObject in results {
             let song = result as! FavoredSong
             songs.append(song)
         }
         
+        sortButton.enabled = songs.count > 2
+        filterButton.enabled = sortButton.enabled
+        initializeOrder()
         favSongTableView.reloadData()
         
+    }
+    
+    func initializeSearchComponent() {
+        sortButton.maskEnabled = false
+        sortButton.ripplePercent = 0.5
+        sortButton.backgroundAniEnabled = false
+        sortButton.rippleLocation = .Center
+        sortButton.tintColor = UIColor.ButtonBKColor()
+        sortButton.enabled = false
+        
+        filterButton.maskEnabled = false
+        filterButton.ripplePercent = 0.5
+        filterButton.backgroundAniEnabled = false
+        filterButton.rippleLocation = .Center
+        filterButton.tintColor = UIColor.ButtonBKColor()
+        filterButton.enabled = false
+    }
+    
+    func initializeFavSongTableComponent() {
+        favSongTableView.delegate = self
+        favSongTableView.dataSource = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        favSongTableView.delegate = self
-        favSongTableView.dataSource = self
+        
+        
+        initializeSearchComponent()
+        initializeFavSongTableComponent()
         
         refreshButton.tintColor = UIColor.whiteColor()
         
@@ -81,6 +120,41 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         return false
     }
     
+    // MARK -- sortView
+    func sort(target: String, sortOrder order: String) {
+        println("target: \(target), order: \(order)")
+        
+        //first, reorder Artist Name, Song Title ASC
+        initializeOrder()
+        
+        switch target {
+        case "Artist Name":
+            songs.sort {(lhs, rhs) in return lhs.artistName < rhs.artistName}
+            break
+        case "Song Title":
+            songs.sort {(lhs, rhs) in return lhs.songTitle < rhs.songTitle}
+            break
+        case "Registered Date":
+            songs.sort {(lhs, rhs) in return lhs.registeredAt < rhs.registeredAt}
+            break
+        case "Song ID":
+            songs.sort {(lhs, rhs) in return lhs.songId.integerValue < rhs.songId.integerValue}
+            break
+        case "Favorite Date":
+            songs.sort {(lhs, rhs) in return lhs.favoredAt.compare(rhs.favoredAt) == .OrderedAscending }
+            break
+        default:
+            break
+        }
+        
+        let asc: Bool = order == "ASC"
+        if !asc {
+            songs = songs.reverse()
+        }
+        
+        favSongTableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showSongInfo") {
             let selectedCell = sender as! FavSongTableViewCell
@@ -91,6 +165,12 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
             let song: Song = Song(id: targetFavSong.id.integerValue, artistId: targetFavSong.artistId.integerValue, artistName: targetFavSong.artistName, artistNameSearch: targetFavSong.artistName, songId: targetFavSong.songId.integerValue, songTitle: targetFavSong.songTitle, songTitleSearch: targetFavSong.songTitle, createdAt: targetFavSong.registeredAt, updatedAt: targetFavSong.registeredAt)
             
             nextViewController.song = song
+        } else if (segue.identifier == "showSortPicker") {
+            let nextViewController: SortViewController = segue.destinationViewController as! SortViewController
+            nextViewController.delegate = self
+            
+            var sortOptions: NSArray = ["Artist Name","Song Title","Registered Date","Song ID", "Favorite Date"]
+            nextViewController.sortOptions = sortOptions
         }
     }
 
