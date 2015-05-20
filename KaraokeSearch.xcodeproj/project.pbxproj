@@ -29,6 +29,9 @@
 		4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */; };
 		4D959CEE1AFF423B002ACA15 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CED1AFF423B002ACA15 /* SortViewController.swift */; };
 		4D959CF01AFF73C4002ACA15 /* FavoredSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D959CEF1AFF73C4002ACA15 /* FavoredSong.swift */; };
+		4DE3AC811B0CA2260031EB2D /* SetListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */; };
+		4DE3AC831B0CA90D0031EB2D /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */; };
+		4DE3AC871B0CB2070031EB2D /* SetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC861B0CB2070031EB2D /* SetList.swift */; };
 		9B7D57F11226F811FBA24797 /* Pods_KaraokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412DA1AA204BD4DE10D6C53 /* Pods_KaraokeSearch.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		4D959CEB1AFF3927002ACA15 /* FavSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavSongTableViewCell.swift; sourceTree = "<group>"; };
 		4D959CED1AFF423B002ACA15 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 		4D959CEF1AFF73C4002ACA15 /* FavoredSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoredSong.swift; sourceTree = "<group>"; };
+		4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListNavigationController.swift; sourceTree = "<group>"; };
+		4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
+		4DE3AC861B0CB2070031EB2D /* SetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetList.swift; sourceTree = "<group>"; };
 		7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,9 @@
 				4D959CED1AFF423B002ACA15 /* SortViewController.swift */,
 				4D746E5F1B01FD89003DC473 /* FilterViewController.swift */,
 				4D746E611B022052003DC473 /* BookmarkWebViewController.swift */,
+				4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */,
+				4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */,
+				4DE3AC861B0CB2070031EB2D /* SetList.swift */,
 			);
 			path = KaraokeSearch;
 			sourceTree = "<group>";
@@ -342,13 +351,16 @@
 				4D5236EE1AFDF74200D27C3C /* Song.swift in Sources */,
 				4D959CE61AFF1640002ACA15 /* SongInfoViewController.swift in Sources */,
 				4D5236E61AFDBDE000D27C3C /* SearchNavigationController.swift in Sources */,
+				4DE3AC831B0CA90D0031EB2D /* SetListViewController.swift in Sources */,
 				4D5236EC1AFDCDE200D27C3C /* SearchSongViewController.swift in Sources */,
 				4D959CEE1AFF423B002ACA15 /* SortViewController.swift in Sources */,
 				4D5236C81AFD9A9700D27C3C /* BaseViewController.swift in Sources */,
 				4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */,
 				4D5236E81AFDC00400D27C3C /* UIColorExtension.swift in Sources */,
 				4D959CE81AFF3057002ACA15 /* FavoriteNavigationController.swift in Sources */,
+				4DE3AC871B0CB2070031EB2D /* SetList.swift in Sources */,
 				4D746E601B01FD89003DC473 /* FilterViewController.swift in Sources */,
+				4DE3AC811B0CA2260031EB2D /* SetListNavigationController.swift in Sources */,
 				4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */,
 				4D959CE41AFE44EA002ACA15 /* JHProgressHUD.swift in Sources */,
 				4D5236C61AFD9A9700D27C3C /* KaraokeSearch.xcdatamodeld in Sources */,
