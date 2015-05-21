@@ -32,6 +32,9 @@
 		4DE3AC811B0CA2260031EB2D /* SetListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */; };
 		4DE3AC831B0CA90D0031EB2D /* SetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */; };
 		4DE3AC871B0CB2070031EB2D /* SetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC861B0CB2070031EB2D /* SetList.swift */; };
+		4DE3AC8B1B0DEE7F0031EB2D /* PodSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC8A1B0DEE7F0031EB2D /* PodSongViewController.swift */; };
+		4DE3AC8D1B0DEECB0031EB2D /* PodSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC8C1B0DEECB0031EB2D /* PodSong.swift */; };
+		4DE3AC8F1B0DF6D70031EB2D /* PodSongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3AC8E1B0DF6D70031EB2D /* PodSongTableViewCell.swift */; };
 		9B7D57F11226F811FBA24797 /* Pods_KaraokeSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0412DA1AA204BD4DE10D6C53 /* Pods_KaraokeSearch.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListNavigationController.swift; sourceTree = "<group>"; };
 		4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetListViewController.swift; sourceTree = "<group>"; };
 		4DE3AC861B0CB2070031EB2D /* SetList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetList.swift; sourceTree = "<group>"; };
+		4DE3AC8A1B0DEE7F0031EB2D /* PodSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodSongViewController.swift; sourceTree = "<group>"; };
+		4DE3AC8C1B0DEECB0031EB2D /* PodSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodSong.swift; sourceTree = "<group>"; };
+		4DE3AC8E1B0DF6D70031EB2D /* PodSongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodSongTableViewCell.swift; sourceTree = "<group>"; };
 		7C00689098462D926A8DE2D3 /* Pods-KaraokeSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaraokeSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaraokeSearch/Pods-KaraokeSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +161,9 @@
 				4DE3AC801B0CA2260031EB2D /* SetListNavigationController.swift */,
 				4DE3AC821B0CA90D0031EB2D /* SetListViewController.swift */,
 				4DE3AC861B0CB2070031EB2D /* SetList.swift */,
+				4DE3AC8A1B0DEE7F0031EB2D /* PodSongViewController.swift */,
+				4DE3AC8C1B0DEECB0031EB2D /* PodSong.swift */,
+				4DE3AC8E1B0DF6D70031EB2D /* PodSongTableViewCell.swift */,
 			);
 			path = KaraokeSearch;
 			sourceTree = "<group>";
@@ -358,8 +367,11 @@
 				4D5236F31AFE0A9F00D27C3C /* SongTableViewCell.swift in Sources */,
 				4D5236E81AFDC00400D27C3C /* UIColorExtension.swift in Sources */,
 				4D959CE81AFF3057002ACA15 /* FavoriteNavigationController.swift in Sources */,
+				4DE3AC8B1B0DEE7F0031EB2D /* PodSongViewController.swift in Sources */,
 				4DE3AC871B0CB2070031EB2D /* SetList.swift in Sources */,
+				4DE3AC8D1B0DEECB0031EB2D /* PodSong.swift in Sources */,
 				4D746E601B01FD89003DC473 /* FilterViewController.swift in Sources */,
+				4DE3AC8F1B0DF6D70031EB2D /* PodSongTableViewCell.swift in Sources */,
 				4DE3AC811B0CA2260031EB2D /* SetListNavigationController.swift in Sources */,
 				4D959CEC1AFF3927002ACA15 /* FavSongTableViewCell.swift in Sources */,
 				4D959CE41AFE44EA002ACA15 /* JHProgressHUD.swift in Sources */,

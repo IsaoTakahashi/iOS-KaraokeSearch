@@ -28,6 +28,8 @@ class SongInfoViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var infoButton: MKButton!
     @IBOutlet weak var youtubeButton: MKButton!
     @IBOutlet weak var lyricsButton: MKButton!
+    @IBOutlet weak var iPadAButton: MKButton!
+    @IBOutlet weak var iPadSButton: MKButton!
     
     @IBOutlet weak var historyTableView: UITableView!
     
@@ -99,6 +101,8 @@ class SongInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         setButtonStyle(infoButton, isActive: true)
+        setButtonStyle(iPadAButton, isActive: false)
+        setButtonStyle(iPadSButton, isActive: false)
     }
     
     func initializeSubInfo() {
@@ -259,6 +263,14 @@ class SongInfoViewController: UIViewController, UITableViewDelegate, UITableView
             nextViewController.song = song
             nextViewController.service = "lyrics"
             nextViewController.navigationItem.title = "Lyrics"
+        } else if (segue.identifier == "ShowiPodListWithSong") {
+            let nextViewController: PodSongViewController = segue.destinationViewController as! PodSongViewController
+            nextViewController.isSong = true
+            nextViewController.searchWord = song!.songTitle
+        } else if (segue.identifier == "ShowiPodListWithArtist") {
+            let nextViewController: PodSongViewController = segue.destinationViewController as! PodSongViewController
+            nextViewController.isSong = false
+            nextViewController.searchWord = song!.artistName
         }
 
     }

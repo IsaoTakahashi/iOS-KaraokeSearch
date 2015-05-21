@@ -165,6 +165,7 @@ class SetListViewController: UIViewController, UITableViewDataSource, UITableVie
         //let song = songs[indexPath.row]
         //cell.configureCell(song, atIndexPath: indexPath)
         cell.textLabel?.text = setLists[indexPath.row].title
+        cell.textLabel?.textColor = UIColor.CellTextColor()
         return cell
     }
     
