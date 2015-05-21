@@ -9,6 +9,7 @@
 import UIKit
 import MaterialKit
 import CoreData
+import MediaPlayer
 
 class SongInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, BookmarkWebViewControllerDelegate {
     
@@ -101,8 +102,30 @@ class SongInfoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         setButtonStyle(infoButton, isActive: true)
-        setButtonStyle(iPadAButton, isActive: false)
-        setButtonStyle(iPadSButton, isActive: false)
+        
+        
+        let hasArtist = isExistArtistOnPod()
+        setButtonStyle(iPadAButton, isActive: hasArtist)
+        iPadAButton.enabled = hasArtist
+        
+        let hasSong = isExistSongOnPod()
+        setButtonStyle(iPadSButton, isActive: hasSong)
+        iPadSButton.enabled = hasSong
+    }
+    
+    func isExistArtistOnPod() -> Bool {
+        let artistQuery: MPMediaQuery = MPMediaQuery.artistsQuery()
+        artistQuery.addFilterPredicate(MPMediaPropertyPredicate(value: song?.artistName, forProperty: MPMediaItemPropertyArtist))
+        
+        return artistQuery.items.count > 0
+    }
+    
+    func isExistSongOnPod() -> Bool {
+        
+        let songQuery: MPMediaQuery = MPMediaQuery.songsQuery()
+        songQuery.addFilterPredicate(MPMediaPropertyPredicate(value: song?.songTitle, forProperty: MPMediaItemPropertyTitle))
+        
+        return songQuery.items.count > 0
     }
     
     func initializeSubInfo() {

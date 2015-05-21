@@ -529,6 +529,16 @@
                                             <action selector="clickPlay:" destination="d0n-Dp-suK" id="YJd-tD-bMJ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" id="bvy-XJ-dYe">
+                                        <slider key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ign-B7-Z2W">
+                                            <rect key="frame" x="95" y="7" width="208" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="changePlayTimeSliderValue:" destination="d0n-Dp-suK" eventType="valueChanged" id="Pte-FW-X6J"/>
+                                            </connections>
+                                        </slider>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="jwe-5R-bmW"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -546,6 +556,7 @@
                     <connections>
                         <outlet property="pauseButton" destination="z6d-eV-CWE" id="WMH-BS-oHQ"/>
                         <outlet property="playButton" destination="fbW-uy-jQ6" id="8hg-df-EF5"/>
+                        <outlet property="playTimeSlider" destination="ign-B7-Z2W" id="zti-UF-up7"/>
                         <outlet property="podSongTableView" destination="J74-M6-jHU" id="5sG-hV-LvF"/>
                         <outlet property="stopButton" destination="lpv-YI-m5l" id="smp-wS-lwT"/>
                         <outlet property="toolBar" destination="Hn6-Ut-RZG" id="sZ5-Qc-33Q"/>

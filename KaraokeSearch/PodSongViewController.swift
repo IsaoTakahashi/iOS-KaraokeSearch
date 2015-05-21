@@ -26,6 +26,8 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var stopButton: UIBarButtonItem!
     @IBOutlet weak var pauseButton: UIBarButtonItem!
     @IBOutlet weak var playButton: UIBarButtonItem!
+    @IBOutlet weak var playTimeSlider: UISlider!
+    
     @IBOutlet weak var podSongTableView: UITableView!
     
     var podSongs = [PodSong]()
@@ -33,6 +35,8 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
     var searchWord: String = ""
     
     var audio: AVAudioPlayer! = nil
+    
+    var playingTimeTimer: NSTimer! = nil
     
     func reloadPodSongs() {
         podSongs.removeAll(keepCapacity: false)
@@ -78,8 +82,15 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func refreshMusicButton() {
         stopButton.enabled = audio != nil
+        if !stopButton.enabled {
+            self.navigationItem.title = ""
+            playTimeSlider.value = 0.0;
+        }
+        
         pauseButton.enabled = audio != nil && audio.playing
+        
         playButton.enabled = audio != nil && !audio.playing
+        playTimeSlider.enabled = audio != nil
     }
     
     func refreshSearchComponent() {
@@ -95,6 +106,8 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
             refreshSearchComponent()
             reloadPodSongs()
         }
+        
+        playingTimeTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updatePlayingTime", userInfo: nil, repeats: true)
     }
     
     override func viewDidLoad() {
@@ -118,6 +131,16 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updatePlayingTime() {
+        if audio != nil && audio.playing {
+            playTimeSlider.value = Float(audio.currentTime)
+        }
+    }
+    
+    func setPlayingTime(pos: Double) {
+        audio.currentTime = pos
     }
     
     func stopSong() {
@@ -160,6 +183,12 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
         
         refreshMusicButton()
     }
+
+    @IBAction func changePlayTimeSliderValue(sender: AnyObject) {
+        setPlayingTime(Double(playTimeSlider!.value))
+        updatePlayingTime()
+    }
+    
     /*
     // MARK: - Navigation
     
@@ -194,11 +223,14 @@ class PodSongViewController: UIViewController, UITableViewDataSource, UITableVie
     func selectSong(song: PodSong) {
         stopSong()
         
+        self.navigationItem.title = song.songTitle
         let songItem: MPMediaItem = getSongItem(NSNumber(integer: song.songId))
         let url: NSURL = songItem.valueForProperty( MPMediaItemPropertyAssetURL ) as! NSURL
         audio = AVAudioPlayer( contentsOfURL: url, error: nil )
         audio.play()
         audio.delegate = self
+        
+        playTimeSlider.maximumValue = Float(audio.duration)
         
         refreshMusicButton()
     }
